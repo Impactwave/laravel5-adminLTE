@@ -1,7 +1,7 @@
 # Selene Framework
 *This is not your grandma's classic PHP framework!* ;-)
 
-Selene is a web framework geared thoward the rapid development of websites and administration backends using the PHP language, providing a clean, pragmatic design, and making use of modern technologies and *forward thinking* development methodologies and patterns.
+Selene is a web framework geared thoward the rapid development of websites and administration backends using the PHP language, providing a clean, pragmatic design, and making use of modern technologies and *forward thinking* development patterns.
 
 ### What's new?
 
@@ -9,7 +9,7 @@ This new version of the Selene PHP framework is a complete rewrite of the origin
 
 Selene is now built on top of the very popular **Laravel** framework, but it takes it much further into the realm of advanced, "reactive" web applications.
 
-Under the hood, it uses the [Hyperblade](../hyperblade) templating engine to provide a component-based UI architecture and uses **Facebook's React** VDOM engine to provide lightening fast responses to user interactions.
+Under the hood, it uses the [Hyperblade](../hyperblade) templating engine to provide a component-based UI architecture and it uses **Facebook's React** VDOM engine to provide lightening fast responses to user interactions.
 
 With Selene, you can develop backend applications that behave like frontend applications, but writing almost no frontend (javascript) code.
 
@@ -58,7 +58,7 @@ To access the administration backend, click the "Administration" link, or open t
 
 ## FAQ
 
-#### Why is the folder structure a little different from the standard Laravel 5 structure?
+##### Why is the folder structure a little different from the standard Laravel 5 structure?
 
 This slightly modified folder structure is more suitable for deployment on a standard linux box, as it doesn't pollute the application user's home folder with lots of files and folders, and the public folder also matches the typical `public_html` folder found on a user's home directory when publishing sites using Apache.
 
