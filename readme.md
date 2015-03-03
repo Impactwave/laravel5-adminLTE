@@ -35,7 +35,7 @@ Selene utilizes [Composer](http://getcomposer.org) to manage its dependencies. S
 Issue the Composer create-project command in your terminal:
 
 ```shell
-composer create-project impactwave/selene2 --prefer-dist
+composer create-project impactwave/selene3 --prefer-dist
 ```
 
 Read the installation instructions at Laravel's website on the [Configuration](http://laravel.com/docs/5.0#configuration) chapter for the next steps.
@@ -50,9 +50,9 @@ Duplicate the file `/.env.example` and name it `.env`. Set the correct values fo
 
 Finally load the application on your web browser by specifying the base URL for it.
 
-> ex: http://localhost/~your_username/selene2, if you're developing on a Mac.
+> ex: http://localhost/~your_username/selene3, if you're developing on a Mac.
 
-You should see a very simple page with a big *Selene 2* title. That is a placeholder page that you can later replace by your website's home page.
+You should see a very simple page with a big *Selene 3* title. That is a placeholder page that you can later replace by your website's home page.
 
 To access the administration backend, click the "Administration" link, or open the `/admin` URL.
 
