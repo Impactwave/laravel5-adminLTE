@@ -1,0 +1,23 @@
+{
+  "name": "agrodynamics-lite",
+  "version": "1.0.0",
+  "authors": [
+    "Impactwave <impactwave@impactwave.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/lib",
+    "vendor"
+  ],
+  "dependencies": {
+    "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.3.0/chosen_v1.3.0.zip",
+    "adminlte": "~2.0.2",
+    "datatables": "~1.10.5",
+    "datatables-responsive": "~1.0.4"
+  }
+}

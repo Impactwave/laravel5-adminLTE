@@ -1,17 +1,18 @@
-@extends('app')
+@extends ('layout.main')
 
-@section('content')
-<div class="container">
-	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
+@section ('content')
 
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-@endsection
+@section ('box-body')
+  <h1 align="center">Selene 3</h1>
+  <p align="center">With AdminLTE integration.</p>
+@overwrite
+
+@section ('box-footer')
+  <div align="right">
+    <button class="btn btn-primary">Button</button>
+  </div>
+@overwrite
+
+@include ('partial.box', ['title'=>'Title'])
+
+@stop

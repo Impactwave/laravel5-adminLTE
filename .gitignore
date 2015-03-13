@@ -1,3 +1,5 @@
 /private/vendor
 /private/node_modules
-.env
+/public_html/lib
+*.env
+.idea
