@@ -15,7 +15,7 @@
 
   <div class="login-box">
     <div class="login-logo">
-      <a href="."><b>Selene</b> 3</a>
+      <a href="."><b>Laravel</b> 5</a>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
       <p class="login-box-msg">Sign in to start your session</p>

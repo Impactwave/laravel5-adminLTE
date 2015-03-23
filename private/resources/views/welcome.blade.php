@@ -44,7 +44,7 @@
     <p style="position:absolute;right:30px"><a href="home">Log In</a></p>
     <div class="container">
       <div class="content">
-        <div class="title">Selene 3</div>
+        <div class="title">Laravel 5</div>
         <div class="quote">{{ Inspiring::quote() }}</div>
       </div>
     </div>
