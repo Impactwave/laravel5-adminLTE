@@ -1,65 +1,56 @@
 @extends('app')
 
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+    <div class="register-box">
+        <div class="register-box-body">
+            <p class="login-box-msg">{{ Lang::get('auth.REGISTRATION') }}</p>
 
-					<form class="form-horizontal" role="form" method="POST" action="auth/register">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
-							</div>
-						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+            <form role="form" method="POST" action="auth/register">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="{{ Lang::get('auth.NAME') }}" name="name" value="{{ old('name') }}">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="email" class="form-control" placeholder="{{ Lang::get('auth.EMAIL') }}" name="email" value="{{ old('email') }}">
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="{{ Lang::get('auth.PASSWORD') }}" name="password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" class="form-control" placeholder="{{ Lang::get('auth.VERIFY PASSWORD') }}" name="password_confirmation">
+                    <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                </div>
+                <div>
+                    <div class="col-xs-7">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"> {{ Lang::get('auth.AGREE') }} <a href="#">{{ Lang::get('auth.AGREE 1') }}</a>
+                            </label>
+                        </div>
+                    </div><!-- /.col -->
+                    <div class="col-xs-5">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">{{ Lang::get('auth.REGISTER') }}</button>
+                    </div><!-- /.col -->
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-xs-8">
+                    <a style="float:left" href="auth/login" class="text-center">{{ Lang::get('auth.REGISTER 1') }}</a>
+                </div><!-- /.col -->
+                <div class="col-xs-4">
+                </div><!-- /.col -->
+            </div>
+        </div><!-- /.form-box -->
+    </div><!-- /.register-box -->
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Register
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 @endsection
+
+
+
+

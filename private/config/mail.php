@@ -28,7 +28,8 @@ return [
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	//'host' => 'smtp.mailgun.org',
+        'host' => 'mail.impactwave.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +42,8 @@ return [
 	|
 	*/
 
-	'port' => 587,
+	//'port' => 587,
+        'port' => 25,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +56,8 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	//'from' => ['address' => null, 'name' => null],
+        'from' => array('address' => 'dev@impactwave.com', 'name' => 'Impactwave'),
 
 	/*
 	|--------------------------------------------------------------------------
