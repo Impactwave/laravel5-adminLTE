@@ -11,11 +11,26 @@
 |
 */
 
+
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+  'auth' => 'Auth\AuthController',
+  'password' => 'Auth\PasswordController',
 ]);
+
+//Route::group (Language::getRouteGroup (), function () {
+//});
+
+
+
+//$router->get('locale', ['as' => 'locale', 'uses' => 'HomeController@locale']);
+
+
+//Route::get('home', 'HomeController@index');
+//Route::get('locale', ['as' => 'locale', 'uses' => 'HomeController@locale']);
+
+

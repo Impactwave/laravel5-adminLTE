@@ -34,6 +34,15 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="lib/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">Alexander Pierce</span> </a>
+                  <menu class='language_switcher'>
+                      <ul>
+                          <?php foreach (Config::get('app.locales') as $locale => $language): ?>
+                          <li class='<?= $locale == App::getLocale() ? 'current' : '' ?>'>
+                              <a href='<?= url(sprintf($changeLocaleUrl, $locale)) ?>'><img src='<?= url('img/country/'. $locale . '.gif') ?>' /></a>
+                          </li>
+                          <?php endforeach; ?>
+                      </ul>
+                  </menu>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">

@@ -53,7 +53,9 @@ return [
 	*/
 
 	'locale' => 'pt',
-
+        'locales' => ['en' => 'English', 'pt' => 'Português'],
+        'locale_use_cookie' => true, // Memorize the locale selection via cookie? Otherwise use URL-based selection.
+        'locale_use_url'    => false, // Use URL-based locale selection.
 	/*
 	|--------------------------------------------------------------------------
 	| Application Fallback Locale
@@ -67,16 +69,19 @@ return [
 
 	'fallback_locale' => 'pt',
 
-	/*
-	|--------------------------------------------------------------------------
-	| Encryption Key
-	|--------------------------------------------------------------------------
-	|
-	| This key is used by the Illuminate encrypter service and should be set
-	| to a random, 32 character string, otherwise these encrypted strings
-	| will not be safe. Please do this before deploying an application!
-	|
-	*/
+
+
+
+  /*
+  |--------------------------------------------------------------------------
+  | Encryption Key
+  |--------------------------------------------------------------------------
+  |
+  | This key is used by the Illuminate encrypter service and should be set
+  | to a random, 32 character string, otherwise these encrypted strings
+  | will not be safe. Please do this before deploying an application!
+  |
+  */
 
 	'key' => env('APP_KEY', 'SomeRandomString'),
 

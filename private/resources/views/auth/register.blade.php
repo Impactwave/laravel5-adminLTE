@@ -47,8 +47,6 @@
             </div>
         </div><!-- /.form-box -->
     </div><!-- /.register-box -->
-
-
 @endsection
 
 

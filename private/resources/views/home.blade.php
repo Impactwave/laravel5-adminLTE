@@ -3,7 +3,7 @@
 @section ('content')
 
 @section ('box-body')
-  <h1 align="center">Laravel 5</h1>
+  <h1 align="center">{{ trans('auth.VERIFY PASSWORD') }}</h1>
   <p align="center">With AdminLTE integration.</p>
 @overwrite
 
