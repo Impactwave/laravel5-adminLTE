@@ -2,6 +2,8 @@
 
 return [
 
+	'name'              => 'Laravel5-adminLTE',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Application Debug Mode
@@ -102,6 +104,18 @@ return [
 
 	'log' => 'daily',
 
+
+	/*
+	|--------------------------------------------------------------------------
+	| Capture Mode Manual
+	| auto OR confirm
+	| confirm - The administrator must activated de user
+	|--------------------------------------------------------------------------
+	|
+	*/
+
+	'registerMode' => 'auto',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers
@@ -112,6 +126,7 @@ return [
 	| this array to grant expanded functionality to your applications.
 	|
 	*/
+
 
 	'providers' => [
 

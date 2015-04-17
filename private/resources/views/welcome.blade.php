@@ -41,12 +41,11 @@
     </style>
   </head>
   <body>
-    <p style="position:absolute;right:30px"><a href="home">Log In</a></p>
-    <div class="container">
+  <p style="position:absolute; left:47%; bottom:25%; padding:10px 30px; background-color:#3C8DBC"><a href="home">Log In</a></p>
+  <div class="container">
       <div class="content">
-        <div class="title">Laravel 5</div>
-        <div class="quote">{{ Inspiring::quote() }}</div>
+          <div class="title">Laravel 5</div>
       </div>
-    </div>
+  </div>
   </body>
 </html>

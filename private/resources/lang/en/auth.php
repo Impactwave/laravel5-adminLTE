@@ -45,5 +45,12 @@ return [
         'confirm-subject' => 'Registration confirmation',
         'login-failed'    => 'Invalid email or password.',
         'profile-updated' => 'Your profile was updated.',
+    'pending-approval' => <<<HTML
+            O seu registo foi efectuado com sucesso!
+            No entanto, só poderá aceder à aplicação quando receber um email de ativação.
+
+HTML
+        ,  'pending-approval_confirmation' =>'Espera Aprovação',
+    'userinactive'        => 'Ainda não está ativo aguarde email de ativação',
 
 ];

@@ -15,7 +15,7 @@ return [
 	|
 	*/
 
-	'driver' => 'smtp',
+	'driver' => 'sendmail',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -57,7 +57,7 @@ return [
 	*/
 
 	//'from' => ['address' => null, 'name' => null],
-        'from' => array('address' => 'dev@impactwave.com', 'name' => 'Impactwave'),
+	'from' => array('address' => 'dev@impactwave.com', 'name' => 'Impactwave'),
 
 	/*
 	|--------------------------------------------------------------------------

@@ -1,0 +1,444 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 warn package.json @ No description
+5 warn package.json @ No repository field.
+6 warn package.json @ No README data
+7 verbose install where, deps [ '/Users/ofelia/Sites/laravel5-adminLTE/private',
+7 verbose install   [ 'gulp', 'laravel-elixir' ] ]
+8 verbose install where, peers [ '/Users/ofelia/Sites/laravel5-adminLTE/private', [] ]
+9 info preinstall @
+10 silly cache add args [ 'laravel-elixir@*', null ]
+11 verbose cache add spec laravel-elixir@*
+12 silly cache add parsed spec { raw: 'laravel-elixir@*',
+12 silly cache add   scope: null,
+12 silly cache add   name: 'laravel-elixir',
+12 silly cache add   rawSpec: '*',
+12 silly cache add   spec: '*',
+12 silly cache add   type: 'range' }
+13 verbose addNamed laravel-elixir@*
+14 silly addNamed semver.valid null
+15 silly addNamed semver.validRange *
+16 silly addNameRange { name: 'laravel-elixir', range: '*', hasData: false }
+17 silly mapToRegistry name laravel-elixir
+18 silly mapToRegistry using default registry
+19 silly mapToRegistry registry https://registry.npmjs.org/
+20 silly mapToRegistry uri https://registry.npmjs.org/laravel-elixir
+21 verbose addNameRange registry:https://registry.npmjs.org/laravel-elixir not in flight; fetching
+22 silly cache add args [ 'gulp@^3.8.8', null ]
+23 verbose cache add spec gulp@^3.8.8
+24 silly cache add parsed spec { raw: 'gulp@^3.8.8',
+24 silly cache add   scope: null,
+24 silly cache add   name: 'gulp',
+24 silly cache add   rawSpec: '^3.8.8',
+24 silly cache add   spec: '>=3.8.8 <4.0.0',
+24 silly cache add   type: 'range' }
+25 verbose addNamed gulp@>=3.8.8 <4.0.0
+26 silly addNamed semver.valid null
+27 silly addNamed semver.validRange >=3.8.8 <4.0.0
+28 silly addNameRange { name: 'gulp', range: '>=3.8.8 <4.0.0', hasData: false }
+29 silly mapToRegistry name gulp
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/gulp
+33 verbose addNameRange registry:https://registry.npmjs.org/gulp not in flight; fetching
+34 verbose request uri https://registry.npmjs.org/gulp
+35 verbose request no auth needed
+36 info attempt registry request try #1 at 3:05:51 PM
+37 verbose request id 9f0588132302cdb7
+38 http request GET https://registry.npmjs.org/gulp
+39 verbose request uri https://registry.npmjs.org/laravel-elixir
+40 verbose request no auth needed
+41 info attempt registry request try #1 at 3:05:51 PM
+42 http request GET https://registry.npmjs.org/laravel-elixir
+43 http 200 https://registry.npmjs.org/gulp
+44 silly get cb [ 200,
+44 silly get   { date: 'Thu, 02 Apr 2015 14:05:51 GMT',
+44 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+44 silly get     etag: '"DX2ZWS4AU85X690IR10BKE1D1"',
+44 silly get     'content-type': 'application/json',
+44 silly get     'cache-control': 'max-age=60',
+44 silly get     'content-length': '100585',
+44 silly get     'accept-ranges': 'bytes',
+44 silly get     via: '1.1 varnish',
+44 silly get     age: '49',
+44 silly get     'x-served-by': 'cache-lcy1134-LCY',
+44 silly get     'x-cache': 'HIT',
+44 silly get     'x-cache-hits': '1',
+44 silly get     'x-timer': 'S1427983551.609523,VS0,VE0',
+44 silly get     vary: 'Accept',
+44 silly get     'keep-alive': 'timeout=10, max=50',
+44 silly get     connection: 'Keep-Alive' } ]
+45 verbose get saving gulp to /Users/ofelia/.npm/registry.npmjs.org/gulp/.cache.json
+46 silly addNameRange number 2 { name: 'gulp', range: '>=3.8.8 <4.0.0', hasData: true }
+47 silly addNameRange versions [ 'gulp',
+47 silly addNameRange   [ '0.0.1',
+47 silly addNameRange     '0.0.2',
+47 silly addNameRange     '0.0.3',
+47 silly addNameRange     '0.0.4',
+47 silly addNameRange     '0.0.5',
+47 silly addNameRange     '0.0.7',
+47 silly addNameRange     '0.0.8',
+47 silly addNameRange     '0.0.9',
+47 silly addNameRange     '0.1.0',
+47 silly addNameRange     '0.2.0',
+47 silly addNameRange     '1.0.0',
+47 silly addNameRange     '1.1.0',
+47 silly addNameRange     '1.2.0',
+47 silly addNameRange     '1.2.1',
+47 silly addNameRange     '2.0.0',
+47 silly addNameRange     '2.0.1',
+47 silly addNameRange     '2.1.0',
+47 silly addNameRange     '2.2.0',
+47 silly addNameRange     '2.3.0',
+47 silly addNameRange     '2.4.0',
+47 silly addNameRange     '2.4.1',
+47 silly addNameRange     '2.6.0',
+47 silly addNameRange     '2.6.1',
+47 silly addNameRange     '2.7.0',
+47 silly addNameRange     '3.0.0',
+47 silly addNameRange     '3.1.1',
+47 silly addNameRange     '3.1.2',
+47 silly addNameRange     '3.1.3',
+47 silly addNameRange     '3.1.4',
+47 silly addNameRange     '3.2.0',
+47 silly addNameRange     '3.2.1',
+47 silly addNameRange     '3.2.2',
+47 silly addNameRange     '3.2.3',
+47 silly addNameRange     '3.2.4',
+47 silly addNameRange     '3.2.5',
+47 silly addNameRange     '3.3.0',
+47 silly addNameRange     '3.3.1',
+47 silly addNameRange     '3.3.2',
+47 silly addNameRange     '3.3.4',
+47 silly addNameRange     '3.4.0',
+47 silly addNameRange     '3.5.0',
+47 silly addNameRange     '3.5.1',
+47 silly addNameRange     '3.5.2',
+47 silly addNameRange     '3.5.5',
+47 silly addNameRange     '3.5.6',
+47 silly addNameRange     '3.6.0',
+47 silly addNameRange     '3.6.1',
+47 silly addNameRange     '3.6.2',
+47 silly addNameRange     '3.7.0',
+47 silly addNameRange     '3.8.0',
+47 silly addNameRange     '3.8.1',
+47 silly addNameRange     '3.8.2',
+47 silly addNameRange     '3.8.3',
+47 silly addNameRange     '3.8.4',
+47 silly addNameRange     '3.8.5',
+47 silly addNameRange     '3.8.6',
+47 silly addNameRange     '3.8.7',
+47 silly addNameRange     '3.8.8',
+47 silly addNameRange     '3.8.9',
+47 silly addNameRange     '3.8.10',
+47 silly addNameRange     '3.8.11' ] ]
+48 verbose addNamed gulp@3.8.11
+49 silly addNamed semver.valid 3.8.11
+50 silly addNamed semver.validRange 3.8.11
+51 silly mapToRegistry name gulp
+52 silly mapToRegistry using default registry
+53 silly mapToRegistry registry https://registry.npmjs.org/
+54 silly mapToRegistry uri https://registry.npmjs.org/gulp
+55 verbose addRemoteTarball https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz not in flight; adding
+56 verbose addRemoteTarball [ 'https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz',
+56 verbose addRemoteTarball   'd557e0a7283eb4136491969b0497767972f1d28a' ]
+57 info retry fetch attempt 1 at 3:05:51 PM
+58 info attempt registry request try #1 at 3:05:51 PM
+59 http fetch GET https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz
+60 http 200 https://registry.npmjs.org/laravel-elixir
+61 silly get cb [ 200,
+61 silly get   { date: 'Thu, 02 Apr 2015 14:05:51 GMT',
+61 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+61 silly get     etag: '"9CO2LZWJC4SIJVDGCXKGAA75B"',
+61 silly get     'content-type': 'application/json',
+61 silly get     'cache-control': 'max-age=60',
+61 silly get     'content-length': '150428',
+61 silly get     'accept-ranges': 'bytes',
+61 silly get     via: '1.1 varnish',
+61 silly get     age: '0',
+61 silly get     'x-served-by': 'cache-lcy1123-LCY',
+61 silly get     'x-cache': 'HIT',
+61 silly get     'x-cache-hits': '1',
+61 silly get     'x-timer': 'S1427983551.608620,VS0,VE88',
+61 silly get     vary: 'Accept',
+61 silly get     'keep-alive': 'timeout=10, max=50',
+61 silly get     connection: 'Keep-Alive' } ]
+62 verbose get saving laravel-elixir to /Users/ofelia/.npm/registry.npmjs.org/laravel-elixir/.cache.json
+63 silly addNameRange number 2 { name: 'laravel-elixir', range: '*', hasData: true }
+64 silly addNameRange versions [ 'laravel-elixir',
+64 silly addNameRange   [ '0.1.0',
+64 silly addNameRange     '0.1.1',
+64 silly addNameRange     '0.1.2',
+64 silly addNameRange     '0.1.3',
+64 silly addNameRange     '0.1.4',
+64 silly addNameRange     '0.1.5',
+64 silly addNameRange     '0.1.6',
+64 silly addNameRange     '0.1.7',
+64 silly addNameRange     '0.1.8',
+64 silly addNameRange     '0.1.9',
+64 silly addNameRange     '0.2.0',
+64 silly addNameRange     '0.2.1',
+64 silly addNameRange     '0.2.2',
+64 silly addNameRange     '0.3.0',
+64 silly addNameRange     '0.3.1',
+64 silly addNameRange     '0.3.2',
+64 silly addNameRange     '0.3.3',
+64 silly addNameRange     '0.3.4',
+64 silly addNameRange     '0.3.5',
+64 silly addNameRange     '0.3.7',
+64 silly addNameRange     '0.3.8',
+64 silly addNameRange     '0.3.9',
+64 silly addNameRange     '0.3.10',
+64 silly addNameRange     '0.3.11',
+64 silly addNameRange     '0.4.0',
+64 silly addNameRange     '0.4.1',
+64 silly addNameRange     '0.4.3',
+64 silly addNameRange     '0.4.4',
+64 silly addNameRange     '0.4.5',
+64 silly addNameRange     '0.4.6',
+64 silly addNameRange     '0.4.7',
+64 silly addNameRange     '0.4.8',
+64 silly addNameRange     '0.4.9',
+64 silly addNameRange     '0.4.10',
+64 silly addNameRange     '0.4.11',
+64 silly addNameRange     '0.4.12',
+64 silly addNameRange     '0.4.13',
+64 silly addNameRange     '0.4.14',
+64 silly addNameRange     '0.4.15',
+64 silly addNameRange     '0.4.16',
+64 silly addNameRange     '0.4.17',
+64 silly addNameRange     '0.5.0',
+64 silly addNameRange     '0.5.1',
+64 silly addNameRange     '0.5.2',
+64 silly addNameRange     '0.5.3',
+64 silly addNameRange     '0.5.4',
+64 silly addNameRange     '0.5.5',
+64 silly addNameRange     '0.5.6',
+64 silly addNameRange     '0.5.7',
+64 silly addNameRange     '0.5.8',
+64 silly addNameRange     '0.6.0',
+64 silly addNameRange     '0.6.1',
+64 silly addNameRange     '0.6.2',
+64 silly addNameRange     '0.6.3',
+64 silly addNameRange     '0.6.4',
+64 silly addNameRange     '0.6.5',
+64 silly addNameRange     '0.6.6',
+64 silly addNameRange     '0.7.0',
+64 silly addNameRange     '0.6.7',
+64 silly addNameRange     '0.6.8',
+64 silly addNameRange     '0.7.1',
+64 silly addNameRange     '0.7.3',
+64 silly addNameRange     '0.7.4',
+64 silly addNameRange     '0.7.5',
+64 silly addNameRange     '0.7.6',
+64 silly addNameRange     '0.7.7',
+64 silly addNameRange     '0.7.8',
+64 silly addNameRange     '0.7.9',
+64 silly addNameRange     '0.7.10',
+64 silly addNameRange     '0.7.11',
+64 silly addNameRange     '0.8.0',
+64 silly addNameRange     '0.8.1',
+64 silly addNameRange     '0.9.1',
+64 silly addNameRange     '0.10.0',
+64 silly addNameRange     '0.10.1',
+64 silly addNameRange     '0.10.2',
+64 silly addNameRange     '0.10.3',
+64 silly addNameRange     '0.10.4',
+64 silly addNameRange     '0.10.5',
+64 silly addNameRange     '0.10.6',
+64 silly addNameRange     '0.10.7',
+64 silly addNameRange     '0.11.0',
+64 silly addNameRange     '0.12.0',
+64 silly addNameRange     '0.12.2',
+64 silly addNameRange     '0.12.3',
+64 silly addNameRange     '0.13.0',
+64 silly addNameRange     '0.13.1',
+64 silly addNameRange     '0.13.2',
+64 silly addNameRange     '0.13.3',
+64 silly addNameRange     '0.14.0',
+64 silly addNameRange     '0.14.2',
+64 silly addNameRange     '0.14.3',
+64 silly addNameRange     '0.14.4',
+64 silly addNameRange     '0.15.0',
+64 silly addNameRange     '0.15.1',
+64 silly addNameRange     '0.15.2',
+64 silly addNameRange     '0.15.3',
+64 silly addNameRange     '0.15.4' ] ]
+65 verbose addNamed laravel-elixir@0.15.4
+66 silly addNamed semver.valid 0.15.4
+67 silly addNamed semver.validRange 0.15.4
+68 silly mapToRegistry name laravel-elixir
+69 silly mapToRegistry using default registry
+70 silly mapToRegistry registry https://registry.npmjs.org/
+71 silly mapToRegistry uri https://registry.npmjs.org/laravel-elixir
+72 verbose addRemoteTarball https://registry.npmjs.org/laravel-elixir/-/laravel-elixir-0.15.4.tgz not in flight; adding
+73 verbose addRemoteTarball [ 'https://registry.npmjs.org/laravel-elixir/-/laravel-elixir-0.15.4.tgz',
+73 verbose addRemoteTarball   '1cbed684ff8c2779b614d00f51ed16573e35ba8a' ]
+74 info retry fetch attempt 1 at 3:05:51 PM
+75 info attempt registry request try #1 at 3:05:51 PM
+76 http fetch GET https://registry.npmjs.org/laravel-elixir/-/laravel-elixir-0.15.4.tgz
+77 http fetch 200 https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz
+78 silly fetchAndShaCheck shasum d557e0a7283eb4136491969b0497767972f1d28a
+79 verbose addTmpTarball /var/folders/9d/6jvcg3k5377g753j7s1zrklh0000gp/T/npm-3642-0336e6b6/registry.npmjs.org/gulp/-/gulp-3.8.11.tgz not in flight; adding
+80 verbose addTmpTarball already have metadata; skipping unpack for gulp@3.8.11
+81 silly cache afterAdd gulp@3.8.11
+82 verbose afterAdd /Users/ofelia/.npm/gulp/3.8.11/package/package.json not in flight; writing
+83 verbose afterAdd /Users/ofelia/.npm/gulp/3.8.11/package/package.json written
+84 http fetch 200 https://registry.npmjs.org/laravel-elixir/-/laravel-elixir-0.15.4.tgz
+85 silly fetchAndShaCheck shasum 1cbed684ff8c2779b614d00f51ed16573e35ba8a
+86 verbose addTmpTarball /var/folders/9d/6jvcg3k5377g753j7s1zrklh0000gp/T/npm-3642-0336e6b6/registry.npmjs.org/laravel-elixir/-/laravel-elixir-0.15.4.tgz not in flight; adding
+87 verbose addTmpTarball already have metadata; skipping unpack for laravel-elixir@0.15.4
+88 silly cache afterAdd laravel-elixir@0.15.4
+89 verbose afterAdd /Users/ofelia/.npm/laravel-elixir/0.15.4/package/package.json not in flight; writing
+90 verbose afterAdd /Users/ofelia/.npm/laravel-elixir/0.15.4/package/package.json written
+91 silly install resolved [ { name: 'gulp',
+91 silly install resolved     description: 'The streaming build system',
+91 silly install resolved     version: '3.8.11',
+91 silly install resolved     homepage: 'http://gulpjs.com',
+91 silly install resolved     repository: { type: 'git', url: 'https://github.com/gulpjs/gulp' },
+91 silly install resolved     author:
+91 silly install resolved      { name: 'Fractal',
+91 silly install resolved        email: 'contact@wearefractal.com',
+91 silly install resolved        url: 'http://wearefractal.com/' },
+91 silly install resolved     tags: [ 'build', 'stream', 'system', 'make', 'tool', 'asset', 'pipeline' ],
+91 silly install resolved     files: [ 'index.js', 'lib', 'bin', 'completion' ],
+91 silly install resolved     bin: { gulp: './bin/gulp.js' },
+91 silly install resolved     man: [ 'gulp.1' ],
+91 silly install resolved     dependencies:
+91 silly install resolved      { archy: '^1.0.0',
+91 silly install resolved        chalk: '^0.5.0',
+91 silly install resolved        deprecated: '^0.0.1',
+91 silly install resolved        'gulp-util': '^3.0.0',
+91 silly install resolved        interpret: '^0.3.2',
+91 silly install resolved        liftoff: '^2.0.1',
+91 silly install resolved        minimist: '^1.1.0',
+91 silly install resolved        orchestrator: '^0.3.0',
+91 silly install resolved        'pretty-hrtime': '^0.2.0',
+91 silly install resolved        semver: '^4.1.0',
+91 silly install resolved        tildify: '^1.0.0',
+91 silly install resolved        v8flags: '^2.0.2',
+91 silly install resolved        'vinyl-fs': '^0.3.0' },
+91 silly install resolved     devDependencies:
+91 silly install resolved      { coveralls: '^2.7.0',
+91 silly install resolved        'graceful-fs': '^3.0.0',
+91 silly install resolved        istanbul: '^0.3.0',
+91 silly install resolved        jshint: '^2.5.0',
+91 silly install resolved        'jshint-stylish': '^1.0.0',
+91 silly install resolved        'marked-man': '^0.1.3',
+91 silly install resolved        mkdirp: '^0.5.0',
+91 silly install resolved        mocha: '^2.0.1',
+91 silly install resolved        'mocha-lcov-reporter': '^0.0.1',
+91 silly install resolved        q: '^1.0.0',
+91 silly install resolved        rimraf: '^2.2.5',
+91 silly install resolved        should: '^4.0.0' },
+91 silly install resolved     scripts:
+91 silly install resolved      { prepublish: 'marked-man --name gulp docs/CLI.md > gulp.1',
+91 silly install resolved        lint: 'jshint lib bin index.js --reporter node_modules/jshint-stylish/stylish.js --exclude node_modules',
+91 silly install resolved        test: 'npm run-script lint && mocha --reporter spec',
+91 silly install resolved        coveralls: 'istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage' },
+91 silly install resolved     engineStrict: true,
+91 silly install resolved     engines: { node: '>= 0.9' },
+91 silly install resolved     licenses: [ [Object] ],
+91 silly install resolved     gitHead: '84df40b0faabc2b61d576154fd1145e2146377ca',
+91 silly install resolved     bugs: { url: 'https://github.com/gulpjs/gulp/issues' },
+91 silly install resolved     _id: 'gulp@3.8.11',
+91 silly install resolved     _shasum: 'd557e0a7283eb4136491969b0497767972f1d28a',
+91 silly install resolved     _from: 'gulp@>=3.8.8 <4.0.0',
+91 silly install resolved     _npmVersion: '2.5.1',
+91 silly install resolved     _nodeVersion: '0.12.0',
+91 silly install resolved     _npmUser: { name: 'phated', email: 'blaine@iceddev.com' },
+91 silly install resolved     maintainers: [ [Object], [Object] ],
+91 silly install resolved     dist:
+91 silly install resolved      { shasum: 'd557e0a7283eb4136491969b0497767972f1d28a',
+91 silly install resolved        tarball: 'http://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz' },
+91 silly install resolved     directories: {},
+91 silly install resolved     _resolved: 'https://registry.npmjs.org/gulp/-/gulp-3.8.11.tgz' },
+91 silly install resolved   { name: 'laravel-elixir',
+91 silly install resolved     version: '0.15.4',
+91 silly install resolved     description: 'Laravel Elixir Core',
+91 silly install resolved     main: 'index.js',
+91 silly install resolved     scripts: { test: 'echo "Error: no test specified" && exit 1' },
+91 silly install resolved     repository: { type: 'git', url: 'https://github.com/laravel/elixir' },
+91 silly install resolved     keywords: [ 'laravel', 'elixir', 'gulp' ],
+91 silly install resolved     author: { name: 'Taylor Otwell, Jeffrey Way' },
+91 silly install resolved     license: 'MIT',
+91 silly install resolved     homepage: 'https://github.com/laravel/elixir',
+91 silly install resolved     dependencies:
+91 silly install resolved      { babelify: '^5.0.4',
+91 silly install resolved        browserify: '^9.0.4',
+91 silly install resolved        del: '^0.1.3',
+91 silly install resolved        'gulp-autoprefixer': '^1.0.1',
+91 silly install resolved        'gulp-coffee': '^2.2.0',
+91 silly install resolved        'gulp-concat': '^2.4.1',
+91 silly install resolved        'gulp-filter': '^1.0.2',
+91 silly install resolved        'gulp-if': '^1.2.5',
+91 silly install resolved        'gulp-less': '^1.3.6',
+91 silly install resolved        'gulp-load-plugins': '^0.7.0',
+91 silly install resolved        'gulp-minify-css': '^0.3.10',
+91 silly install resolved        'gulp-notify': '^1.8.0',
+91 silly install resolved        'gulp-phpspec': '^0.3.0',
+91 silly install resolved        'gulp-phpunit': '^0.6.3',
+91 silly install resolved        'gulp-rename': '^1.2.0',
+91 silly install resolved        'gulp-rev': '^2.0.0',
+91 silly install resolved        'gulp-ruby-sass': '^1.0.0-alpha.3',
+91 silly install resolved        'gulp-sass': '^1.1.0',
+91 silly install resolved        'gulp-shell': '^0.2.9',
+91 silly install resolved        'gulp-sourcemaps': '^1.3.0',
+91 silly install resolved        'gulp-uglify': '^1.0.1',
+91 silly install resolved        'gulp-util': '^3.0.1',
+91 silly install resolved        install: '^0.1.7',
+91 silly install resolved        'main-bower-files': '^2.4.0',
+91 silly install resolved        'merge-stream': '^0.1.7',
+91 silly install resolved        npm: '^2.1.2',
+91 silly install resolved        'parse-filepath': '^0.5.0',
+91 silly install resolved        reactify: '^1.1.0',
+91 silly install resolved        'require-dir': '^0.1.0',
+91 silly install resolved        'run-sequence': '^1.0.1',
+91 silly install resolved        underscore: '^1.7.0',
+91 silly install resolved        'vinyl-paths': '^1.0.0',
+91 silly install resolved        'vinyl-source-stream': '^1.1.0' },
+91 silly install resolved     devDependencies: { gulp: '^3.8.8' },
+91 silly install resolved     gitHead: 'a1548b96c7b608bedbfbc9c428a6feee3a9a645a',
+91 silly install resolved     bugs: { url: 'https://github.com/laravel/elixir/issues' },
+91 silly install resolved     _id: 'laravel-elixir@0.15.4',
+91 silly install resolved     _shasum: '1cbed684ff8c2779b614d00f51ed16573e35ba8a',
+91 silly install resolved     _from: 'laravel-elixir@*',
+91 silly install resolved     _npmVersion: '1.4.21',
+91 silly install resolved     _npmUser: { name: 'jeffreyway', email: 'jeffrey@laracasts.com' },
+91 silly install resolved     maintainers: [ [Object] ],
+91 silly install resolved     dist:
+91 silly install resolved      { shasum: '1cbed684ff8c2779b614d00f51ed16573e35ba8a',
+91 silly install resolved        tarball: 'http://registry.npmjs.org/laravel-elixir/-/laravel-elixir-0.15.4.tgz' },
+91 silly install resolved     directories: {},
+91 silly install resolved     _resolved: 'https://registry.npmjs.org/laravel-elixir/-/laravel-elixir-0.15.4.tgz' } ]
+92 info install gulp@3.8.11 into /Users/ofelia/Sites/laravel5-adminLTE/private
+93 info install laravel-elixir@0.15.4 into /Users/ofelia/Sites/laravel5-adminLTE/private
+94 info installOne gulp@3.8.11
+95 verbose installOne of gulp to /Users/ofelia/Sites/laravel5-adminLTE/private not in flight; installing
+96 info installOne laravel-elixir@0.15.4
+97 verbose installOne of laravel-elixir to /Users/ofelia/Sites/laravel5-adminLTE/private not in flight; installing
+98 warn locking Error: EACCES, open '/Users/ofelia/.npm/_locks/laravel-elixir-cbcb9e168c210cc0.lock'
+98 warn locking     at Error (native)
+98 warn locking  /Users/ofelia/.npm/_locks/laravel-elixir-cbcb9e168c210cc0.lock failed { [Error: EACCES, open '/Users/ofelia/.npm/_locks/laravel-elixir-cbcb9e168c210cc0.lock']
+98 warn locking   errno: -13,
+98 warn locking   code: 'EACCES',
+98 warn locking   path: '/Users/ofelia/.npm/_locks/laravel-elixir-cbcb9e168c210cc0.lock' }
+99 verbose stack Error: Attempt to unlock /Users/ofelia/Sites/laravel5-adminLTE/private/node_modules/laravel-elixir, which hasn't been locked
+99 verbose stack     at unlock (/usr/local/lib/node_modules/npm/lib/utils/locker.js:66:11)
+99 verbose stack     at cb (/usr/local/lib/node_modules/npm/lib/install.js:1004:5)
+99 verbose stack     at /usr/local/lib/node_modules/npm/lib/install.js:1008:20
+99 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/locker.js:40:9
+99 verbose stack     at cb (/usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:149:38)
+99 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/lockfile/lockfile.js:177:38
+99 verbose stack     at FSReqWrap.oncomplete (fs.js:95:15)
+100 verbose cwd /Users/ofelia/Sites/laravel5-adminLTE/private
+101 error Darwin 14.1.0
+102 error argv "node" "/usr/local/bin/npm" "install"
+103 error node v0.12.2
+104 error npm  v2.7.4
+105 error Attempt to unlock /Users/ofelia/Sites/laravel5-adminLTE/private/node_modules/laravel-elixir, which hasn't been locked
+106 error If you need help, you may report this error at:
+106 error     <https://github.com/npm/npm/issues>
+107 verbose exit [ 1, true ]

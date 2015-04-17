@@ -27,11 +27,6 @@
                 </div>
                 <div>
                     <div class="col-xs-7">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox"> {{ Lang::get('auth.AGREE') }} <a href="#">{{ Lang::get('auth.AGREE 1') }}</a>
-                            </label>
-                        </div>
                     </div><!-- /.col -->
                     <div class="col-xs-5">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">{{ Lang::get('auth.REGISTER') }}</button>

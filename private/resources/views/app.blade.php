@@ -3,6 +3,15 @@
 @section ('body')
 
   <body class="login-page">
+      @if (Session::has ('message'))
+          <? list ($flashType, $msg, $title) = explode ('|', Session::get ('message')) + [''] + ['']; ?>
+          <div class="alert alert-{{ $flashType }}">
+              @if ($title)
+                  <p><b>{{ $title }}</b></p>
+              @endif
+              {{ $msg }}
+          </div>
+      @endif
 
       @if (count($errors) > 0)
           <div class="alert alert-danger">
