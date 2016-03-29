@@ -31,6 +31,6 @@ class Kernel extends HttpKernel {
 	];
 
 	public function addMiddleware ($className) {
-    $this->middleware[] = $className;
-  }
+		$this->middleware[] = $className;
+	}
 }

@@ -128,7 +128,7 @@ return [
 	*/
 
 
-	'providers' => [
+	'providers' => array_merge([
 
 		/*
 		 * Laravel Framework Service Providers...
@@ -164,8 +164,13 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
-
-	],
+	], env('APP_ENV') == 'local' ? [
+		/*
+		 * Development Service Providers...
+		 */
+		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
+		] : []
+	),
 
 	/*
 	|--------------------------------------------------------------------------

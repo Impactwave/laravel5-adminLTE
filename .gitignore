@@ -1,5 +1,7 @@
 /private/vendor
+/private/_ide_helper.php
 /private/node_modules
+/private/composer.lock
 /public_html/lib
 *.env
 .idea
