@@ -11,6 +11,8 @@
   <script src='lib/adminlte/plugins/fastclick/fastclick.min.js'></script>
   <!-- AdminLTE App -->
   <script src="lib/adminlte/dist/js/app.min.js" type="text/javascript"></script>
+  <!-- Toastr -->
+  <script src="lib/toastr/toastr.min.js"></script>
 @stop
 
 @section ('body')

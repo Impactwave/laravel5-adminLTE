@@ -11,6 +11,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Input;
+use Lang;
 use Mail;
 use Redirect;
 use Util;
@@ -120,6 +121,8 @@ class AuthController extends Controller
           ['title' => trans ('auth.pending-approval_confirmation'), 'text' => trans ('auth.pending-approval')]);
       }
     }
+
+    Util::flash ('Os dados de login são inválidos', 'Atenção!');
 
     return redirect ($this->loginPath ())
       ->withInput ($request->only ('email', 'remember'))

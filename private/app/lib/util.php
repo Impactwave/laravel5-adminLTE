@@ -3,16 +3,29 @@
  * Copyright 2013 Impactwave Lda, all rights reserved.
  */
 
+use Illuminate\Database\Query\Builder;
+
 /**
  * Generic Utility Functions
  */
 class Util
 {
 
+  const ALERT_ERROR   = 'danger';
+  const ALERT_INFO    = 'info';
   const ALERT_SUCCESS = 'success';
-  const ALERT_INFO = 'info';
   const ALERT_WARNING = 'warning';
-  const ALERT_ERROR = 'danger';
+
+  public static function activeIfRouteTagged ($tag, $activeClass = 'active')
+  {
+    return self::currentRouteTagged ($tag) ? $activeClass : '';
+  }
+
+  public static function currentRouteTagged ($tag)
+  {
+    $route = Route::current ();
+    return $route ? (array_get ($route->getAction (), 'tag') == $tag) : false;
+  }
 
   /**
    * Allows sending flash messages to be viewed on the next request.
@@ -30,6 +43,46 @@ class Util
   }
 
   /**
+   * @param Builder      $b       The result of running <kbd>DB::table ('table_name')</kbd>.
+   * @param array|string $columns An array of column names, or a string of comma-delimited column names.
+   * @param string       $csv     The CSV data.
+   * @return Builder The builder, for chaining.
+   */
+  static function importCSV (Builder $b, $columns, $csv)
+  {
+    if (is_string ($columns)) $columns = explode (',', $columns);
+// Use an I/O stream instead of an actual file.
+    $handle = fopen ('php://temp/myCSV', 'w+b');
+
+// Write all the data to it
+    fwrite ($handle, $csv);
+
+// Rewind for reading
+    rewind ($handle);
+
+// use fgetcsv which tends to work better than str_getcsv in some cases
+    $data= [];
+    $i    = 0;
+    try {
+      while ($row = fgetcsv ($handle, null, ',', "'")) {
+        ++$i;
+        $data[] = array_combine ($columns, $row);
+      }
+      fclose ($handle);
+    } catch (ErrorException $e) {
+      echo "\nInvalid row #$i\n\nColumns:\n";
+      var_export ($columns);
+      echo "\n\nRow:\n";
+      var_export ($row);
+      echo "\n";
+      exit (1);
+    }
+
+    $b->insert ($data);
+    return $b;
+  }
+
+  /**
    * Shortcut for request data validation.
    *
    * Ex:
@@ -44,40 +97,15 @@ class Util
    *
    * @return bool|\Illuminate\Http\RedirectResponse
    */
-  public static function validate (array $rules, array $messages = array(), array $customAttributes = array())
+  public static function validate (array $rules, array $messages = [], array $customAttributes = [])
   {
     $validator = Validator::make (Input::all (), $rules, $messages, $customAttributes);
     if ($validator->fails ()) {
-      self::flash (Lang::get ('app.formValidationFailed'));
+      self::flash (Lang::get ('app.form_validation_failed'));
       return Redirect::refresh ()
-          ->withErrors ($validator)
-          ->withInput ();
+                     ->withErrors ($validator)
+                     ->withInput ();
     }
     return false;
   }
-
-  public static function validationMessageFor ($field, $label = null, $related = null, $relatedLabel = null)
-  {
-    $errors  = View::shared ('errors');
-    $message = $errors->first ($field, '<div class="help-block">:message</div>');
-    if (!$message) return '';
-    $fieldEsc = preg_quote ($field);
-    $message  = $label ? preg_replace ("/\\b$fieldEsc\\b/", $label, $message) : $message;
-    if (isset($related)) {
-      $fieldEsc = preg_quote ($related);
-      $message  = preg_replace ("/\\b$fieldEsc\\b/", $relatedLabel, $message);
-    }
-    return $message;
-  }
-
-  public static function currentRouteTagged ($tag) {
-    $route = Route::current();
-    return $route ? (array_get($route->getAction(), 'tag') == $tag) : false;
-  }
-
-  public static function activeIfRouteTagged ($tag, $activeClass = 'active') {
-    return self::currentRouteTagged ($tag) ? $activeClass : '';
-  }
-
-
 }

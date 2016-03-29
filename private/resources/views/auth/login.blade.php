@@ -10,7 +10,7 @@
     <div class="login-box-body">
       <p class="login-box-msg">{{ Lang::get('auth.LOGIN') }}</p>
       <form method="POST" action="auth/login">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        @@token
         <div class="form-group has-feedback">
           <input type="text" class="form-control" placeholder="{{ Lang::get('auth.EMAIL') }}" name="email" value="{{ old('email') }}" autofocus/>
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-xs-7">
             <label style="padding-top:7px">
-              <input type="checkbox" name="remember"> {{ Lang::get('auth.REMEMBER ME') }}
+              <input type="checkbox" name="remember"> &nbsp; {{ Lang::get('auth.REMEMBER ME') }}
             </label>
           </div><!-- /.col -->
           <div class="col-xs-5">
@@ -37,5 +37,6 @@
       <br style="clear:both">
 
     </div><!-- /.login-box-body -->
+  </div>
 
 @endsection

@@ -17,6 +17,8 @@
          folder instead of downloading all of them to reduce the load. -->
     <link href="lib/adminlte/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
 
+    <link href="lib/toastr/toastr.css" rel="stylesheet">
+
     @yield ('head')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
