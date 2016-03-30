@@ -11,7 +11,7 @@ use Illuminate\Database\Query\Builder;
 class Util
 {
 
-  const ALERT_ERROR   = 'danger';
+  const ALERT_ERROR   = 'error';
   const ALERT_INFO    = 'info';
   const ALERT_SUCCESS = 'success';
   const ALERT_WARNING = 'warning';
