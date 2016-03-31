@@ -1,6 +1,5 @@
 <?php namespace App\Providers;
 
-use BladeExt;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider {
@@ -12,7 +11,6 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		\BladeExt::register ();
 	}
 
 	/**

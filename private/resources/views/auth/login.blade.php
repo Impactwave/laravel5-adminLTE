@@ -2,7 +2,6 @@
 
 @section('content')
 
-
   <div class="login-box">
     <div class="login-logo">
       <a href="."><b>Laravel</b> 5</a>
