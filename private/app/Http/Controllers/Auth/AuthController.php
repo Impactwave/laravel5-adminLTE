@@ -10,6 +10,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
+use Impactwave\Razorblade\Form;
 use Input;
 use Lang;
 use Mail;
@@ -122,7 +123,7 @@ class AuthController extends Controller
       }
     }
 
-    Util::flash ('Os dados de login são inválidos', 'Atenção!');
+    Form::flash ('Os dados de login são inválidos', 'Atenção!');
 
     return redirect ($this->loginPath ())
       ->withInput ($request->only ('email', 'remember'))

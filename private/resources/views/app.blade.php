@@ -32,7 +32,7 @@
     @yield ('content')
     @yield ('scripts')
 
-    @@flashMessage
+    @@toastrMessage
   </body>
 
 @stop

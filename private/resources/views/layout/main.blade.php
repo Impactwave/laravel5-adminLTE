@@ -123,6 +123,7 @@
 
     @yield ('scripts')
 
+    @@toastrMessage
   </body>
 
 @stop
