@@ -1,5 +1,5 @@
 {
-  "name": "agrodynamics-lite",
+  "name": "project",
   "version": "1.0.0",
   "authors": [
     "Impactwave <impactwave@impactwave.com>"
@@ -17,8 +17,10 @@
   "dependencies": {
     "chosen": "https://github.com/harvesthq/chosen/releases/download/v1.3.0/chosen_v1.3.0.zip",
     "adminlte": "~2.0.2",
-    "datatables": "~1.10.5",
-    "datatables-responsive": "~1.0.4",
-    "toastr": "~2.0.1"
+    "toastr": "~2.0.1",
+    "datatables.net-bs": "~1.10.10",
+    "datatables.net-responsive-bs": "~2.0.0",
+    "datatables.net-buttons-bs": "^1.1.2",
+    "font-awesome": "^4.5.0"
   }
 }

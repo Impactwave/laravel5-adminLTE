@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
 
-use Response;
+use App\User;
+use View;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
   /*
   |--------------------------------------------------------------------------
@@ -24,13 +25,23 @@ class HomeController extends Controller
   }
 
   /**
-   * Show the application dashboard to the user.
+   * The user detail form.
    *
-   * @return Response
+   * @return View
    */
-  public function index ()
+  public function getUser ($id = null)
   {
-    return view ('home');
+    return view ('admin.user', ['user' => User::findOrNew ($id)]);
+  }
+
+  /**
+   * The user list page.
+   *
+   * @return View
+   */
+  public function getUsers ()
+  {
+    return view ('admin.users', ['users' => User::all ()]);
   }
 
 }

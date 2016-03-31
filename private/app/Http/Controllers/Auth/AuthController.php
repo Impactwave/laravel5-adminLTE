@@ -72,7 +72,7 @@ class AuthController extends Controller
             break;
           case 'confirm':
             $userQuery->update (['pending' => 1]);
-            return view ('info',
+            return view ('auth.info',
               ['title' => trans ('auth.pending-approval_confirmation'), 'text' => trans ('auth.pending-approval')]);
             break;
         }
@@ -118,7 +118,7 @@ class AuthController extends Controller
         return redirect ()->intended ($this->redirectPath ());
       else {
         $this->auth->logout ();
-        return view ('info',
+        return view ('auth.info',
           ['title' => trans ('auth.pending-approval_confirmation'), 'text' => trans ('auth.pending-approval')]);
       }
     }
@@ -194,12 +194,12 @@ class AuthController extends Controller
         Mail::send ('emails.confirm', $mailData, function ($message) use ($email) {
           $message->to ($email)->subject (trans ('auth.confirm-subject')); // Confirmação do registo.
         });
-        return view ('info', ['title' => trans ('auth.REGISTER'), 'text' => trans ('auth.sent')]);
+        return view ('auth.info', ['title' => trans ('auth.REGISTER'), 'text' => trans ('auth.sent')]);
         break;
       case 'confirm':
         $user = DB::table ('users')->where ('email', $email);
         $user->update (['pending' => 1]);
-        return view ('info',
+        return view ('auth.info',
           ['title' => trans ('auth.pending-approval_confirmation'), 'text' => trans ('auth.pending-approval')]);
         break;
     }

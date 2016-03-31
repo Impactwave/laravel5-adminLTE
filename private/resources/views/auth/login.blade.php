@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layout.clean')
 
 @section('content')
 
@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-xs-7">
             <label style="padding-top:7px">
-              <input type="checkbox" name="remember"> &nbsp; {{ Lang::get('auth.REMEMBER ME') }}
+              <input type="checkbox" name="remember">{{ Lang::get('auth.REMEMBER ME') }}
             </label>
           </div><!-- /.col -->
           <div class="col-xs-5">

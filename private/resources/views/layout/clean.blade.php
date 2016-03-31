@@ -1,7 +1,8 @@
 @extends ('layout.master')
 
 @section ('head')
-  <link href="lib/adminlte/plugins/iCheck/all.css" rel="stylesheet">
+  <link href="lib/adminlte/plugins/iCheck/square/blue.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet" type="text/css">
 @stop
 
 @section ('scripts')

@@ -1,5 +1,13 @@
 @extends ('layout.master')
 
+@section ('head')
+  <link href="lib/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="lib/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="lib/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="lib/adminlte/plugins/iCheck/square/blue.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet" type="text/css">
+@stop
+
 @section ('scripts')
   <!-- jQuery 2.1.3 -->
   <script src="lib/jquery/dist/jquery.min.js"></script>
@@ -13,6 +21,25 @@
   <script src="lib/adminlte/dist/js/app.min.js" type="text/javascript"></script>
   <!-- Toastr -->
   <script src="lib/toastr/toastr.min.js"></script>
+
+  <!-- DataTables -->
+  <script src='lib/datatables.net/js/jquery.dataTables.min.js'></script>
+  <script src='lib/datatables.net-bs/js/dataTables.bootstrap.min.js'></script>
+  <script src='lib/datatables.net-responsive/js/dataTables.responsive.min.js'></script>
+  <script src='lib/datatables.net-buttons/js/dataTables.buttons.min.js'></script>
+  <script src='lib/datatables.net-buttons-bs/js/buttons.bootstrap.min.js'></script>
+
+  <!-- iCheck -->
+  <script src="lib/adminlte/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+  <script>
+    $(function () {
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+      });
+    });
+  </script>
 @stop
 
 @section ('body')
@@ -28,20 +55,20 @@
           <!-- Sidebar toggle button-->
           <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span> </a>
+            <span class="icon-bar"></span></a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">{{ $name  }}</span> </a>
+                  <span class="hidden-xs">{{ $name  }}</span></a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="img/user.jpg" class="img-circle" alt="User Image"/>
                     <p>
-                        {{ $name  }}
+                      {{ $name  }}
                       <small>{{ $email  }}</small>
                     </p>
                   </li>
@@ -88,11 +115,8 @@
               </span>
             </div>
           </form>
-          <!-- /.search form --><!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
-            <li class="active"><a href="."><i class="glyphicon glyphicon-home"></i> Home</a></li>
-          </ul>
+          <!-- /.search form -->
+          @include ('partial.menu')
         </section>
         <!-- /.sidebar -->
       </aside>
@@ -116,7 +140,9 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 3.0
         </div>
-        <strong>Copyright &copy; 2015 <a href="http://impactwave.com">Impactwave, Lda</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2015
+          <a href="http://impactwave.com">Impactwave, Lda</a>
+                .</strong> All rights reserved.
       </footer>
     </div>
     <!-- ./wrapper -->

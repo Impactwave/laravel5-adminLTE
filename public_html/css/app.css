@@ -1,5 +1,87 @@
-body,
-label,
-.checkbox label {
+body, label, .checkbox label {
   font-weight: 300;
 }
+
+.checkbox label {
+  padding-left: 0 !important;
+}
+.icheckbox_square-blue {
+  margin-right: 5px;
+}
+
+.action-bar .btn {
+  float: right;
+  min-width: 120px;
+  margin-left: 10px;
+}
+
+.action-bar::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.btn i {
+  margin-right: 13px;
+  vertical-align: middle;
+  top: -2px;
+}
+
+/* DataTables */
+
+.dataTable {
+  /*table-layout: fixed;*/
+  visibility: hidden;
+}
+
+.dataTable tbody .c {
+  cursor: pointer;
+}
+
+table.dataTable thead .sorting::after {
+  font-family:'FontAwesome';
+  top: 0;
+  bottom: 0;
+  line-height: 35px !important;
+  opacity: 0.35;
+  content: '\f0dc';
+}
+table.dataTable thead .sorting_asc::after {
+  font-family:'FontAwesome';
+  top: 0;
+  bottom: 0;
+  line-height: 35px !important;
+  opacity: 0.35;
+  content: '\f0dc';
+  content: '\f0de';
+}
+table.dataTable thead .sorting_desc::after {
+  font-family:'FontAwesome';
+  top: 0;
+  bottom: 0;
+  line-height: 35px !important;
+  opacity: 0.35;
+  content: '\f0dc';
+  content: '\f0dd';
+}
+table.dataTable thead .sorting_asc_disabled::after {
+  font-family:'FontAwesome';
+  top: 0;
+  bottom: 0;
+  line-height: 35px !important;
+  opacity: 0.35;
+  content: '\f0dc';
+  content: '\f0de';
+  opacity: 0.2;
+}
+table.dataTable thead .sorting_desc_disabled::after {
+  font-family:'FontAwesome';
+  top: 0;
+  bottom: 0;
+  line-height: 35px !important;
+  opacity: 0.35;
+  content: '\f0dc';
+  content: '\f0dd';
+  opacity: 0.2;
+}
+
