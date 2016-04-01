@@ -6,11 +6,7 @@ Laravel 5 starter app + AdminLTE integration
 This is a functioning application protoype based on the Laravel 5 framework.
 You can use it to bootstrap and accelerate your development process.
 
-It features:
-
-#### AdminLTE integration
-
-An integration of the popular open source AdminLTE Bootstrap-based application template with the Laravel framework, featuring:
+### Features
 
 * An easy and rapid way of creating fully functional forms, with:
 
@@ -29,6 +25,7 @@ An integration of the popular open source AdminLTE Bootstrap-based application t
     * Search
     * Paginator
     * Sort by colum
+    * Localization support
     * Blade directive for easy creation of data grids
 
 * Fully functioning user authentication system, with:
@@ -60,6 +57,14 @@ An integration of the popular open source AdminLTE Bootstrap-based application t
     * Bower and Composer integration
     * Improved compatibility with local development on Mac OSX, with support for `http://localhost/~user/site` URLs, configured via a specially crafted `.htaccess` file
     * Tweaked folder organization better suited for deployment on Apache on Linux web servers
+
+#### AdminLTE integration
+
+An integration of the popular open source AdminLTE Bootstrap-based application template with the Laravel framework, featuring:
+
+* Blade templates, with hierarchical view composition (aka Master Pages)
+* View Composers
+* A small set of reusable and parametrized components
 
 #### Razorblade integration
 
