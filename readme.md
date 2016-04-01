@@ -51,9 +51,9 @@ Finally load the application on your web browser by specifying the base URL for 
 
 > ex: http://localhost/~your_username/laravel5-aminLTE, if you're developing on a Mac.
 
-You should see a very simple page with a big *Laravel* title. That is a placeholder page that you can later replace by your website's home page.
+You should see a very simple page with a big title on the center. That is a placeholder page that you can later replace by your application/website's home page.
 
-To access the administration backend, click the "Administration" link, or open the `/admin` URL.
+To enter the application, click the "Log In" button.
 
 ## FAQ
 

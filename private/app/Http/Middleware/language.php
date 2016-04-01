@@ -1,17 +1,18 @@
 <?php
 namespace App\Http\Middleware;
 
+use App;
 use Closure;
+use Config;
 use Illuminate\Contracts\Routing\Middleware;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\Lang;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\View;
+use Lang;
+use Request;
+use Session;
+use View;
 
 /**
- * Transforms an hyperlink URL to include the locale specifier if the locale' selectiom mode requires it.
+ * Transforms an hyperlink URL to include the locale specifier if the locale' selection mode requires it.
+ *
  * @param string $url
  *
  * @return string
@@ -35,41 +36,6 @@ class Language implements Middleware
       $this->request = $request;
     }
   */
-  /**
-   * @param Request $request
-   * @param Closure $next
-   */
-  public function handle($request, Closure $next)
-  {
-    Lang::setFallback (self::getDefault ());
-    $setLocale = Session::get ('setLocale'); //flash data
-
-    if (Config::get ('app.locale_use_cookie')) {
-      if ($setLocale)
-        Session::set ('locale', $setLocale);
-      if (Session::has ('locale'))
-        App::setLocale (Session::get ('locale'));
-      else self::autoDetect ();
-    } else
-
-      if (Config::get ('app.locale_use_url')) {
-        if ($setLocale)
-          self::setLocaleURLSegment ($setLocale);
-        else {
-          $lang = self::getLocaleFromURL ();
-          if ($lang)
-            App::setLocale ($lang);
-          else if ($request->segment (1) != 'locale') { //ignore set-locale URL
-            self::autoDetect ();
-            self::setLocaleURLSegment (self::get ());
-          }
-        }
-      }
-
-    View::share('lang', self::get ());
-
-  }
-
   public static function autoDetect ()
   {
     $browser_lang =
@@ -80,37 +46,10 @@ class Language implements Middleware
     // $userLang is not returned because the locale that will be actually selected by the framework may be different.
   }
 
-  public static function getRouteGroup ()
-  {
-    $locale = self::getLocaleFromURI ();
-    return isset($locale) ? array('prefix' => $locale) : array();
-  }
-
-  public function getLocaleFromURI ()
-  {
-    $locale = Request::segments (1);
-    return self::isAvailable ($locale) ? $locale : null;
-  }
-
   public static function get ()
   {
     $locale = App::getLocale ();
     return self::isAvailable ($locale) ? $locale : self::getDefault ();
-  }
-
-  public static function getDefault ()
-  {
-    return Config::get ('app.fallback_locale', 'en');
-  }
-
-  public static function getName ()
-  {
-    return self::nameOf (self::get ());
-  }
-
-  public static function nameOf ($locale)
-  {
-    return get (self::getAll (), $locale);
   }
 
   public static function getAll ()
@@ -123,16 +62,30 @@ class Language implements Middleware
     return array_keys (self::getAll ());
   }
 
+  public static function getDefault ()
+  {
+    return Config::get ('app.fallback_locale', 'en');
+  }
+
+  public static function getName ()
+  {
+    return self::nameOf (self::get ());
+  }
+
+  public static function getRouteGroup ()
+  {
+    $locale = self::getLocaleFromURI ();
+    return isset($locale) ? ['prefix' => $locale] : [];
+  }
+
   public static function isAvailable ($locale)
   {
     return isset(self::getAll ()[$locale]);
   }
 
-  public  function set ($locale)
+  public static function nameOf ($locale)
   {
-    Session::set ('locale', $locale);
-    App::setLocale ($locale);
-
+    return array_get (self::getAll (), $locale);
   }
 
   /**
@@ -140,9 +93,71 @@ class Language implements Middleware
    *
    * @param string $locale
    */
-  public  function changeTo ($locale)
+  public function changeTo ($locale)
   {
-    redirect ()->back ()->with ('setLocale', $locale);
+    return redirect ()->back ()->with ('setLocale', $locale);
+  }
+
+  public function getLocaleFromURI ()
+  {
+    $locale = Request::segment (1);
+    return self::isAvailable ($locale) ? $locale : null;
+  }
+
+  /**
+   * @param Request $request
+   * @param Closure $next
+   * @return mixed
+   */
+  public function handle ($request, Closure $next)
+  {
+    Lang::setFallback (self::getDefault ());
+    $setLocale = Session::get ('setLocale'); //flash data
+
+    if (Config::get ('app.locale_use_cookie')) {
+      if ($setLocale)
+        Session::set ('locale', $setLocale);
+      if (Session::has ('locale'))
+        App::setLocale (Session::get ('locale'));
+      else self::autoDetect ();
+    }
+    else if (Config::get ('app.locale_use_url')) {
+      if ($setLocale)
+        self::setLocaleURLSegment ($setLocale);
+      else {
+        $lang = self::getLocaleFromURL ();
+        if ($lang)
+          App::setLocale ($lang);
+        else if ($request->segment (1) != 'locale') { //ignore set-locale URL
+          self::autoDetect ();
+          self::setLocaleURLSegment (self::get ());
+        }
+      }
+    }
+
+    if ($request->segment (1) == 'locale')
+      return self::changeTo (($request->segment (2)));
+
+    View::share ('lang', self::get ());
+    return $next($request);
+  }
+
+  public function set ($locale)
+  {
+    Session::set ('locale', $locale);
+    App::setLocale ($locale);
+
+  }
+
+  /**
+   * Checks if the first virtual URL segment is a language identifier and returns it if so.
+   *
+   * @return string|bool
+   */
+  private function getLocaleFromURL ()
+  {
+    $lang = Request::segment (1);
+    return $lang && preg_match ('/^[a-z]{2}$/', $lang) ? $lang : false;
   }
 
   /**
@@ -156,17 +171,6 @@ class Language implements Middleware
       $path[0] = $locale;
     else array_unshift ($path, $locale);
     redirect ()->to (implode ('/', $path));
-  }
-
-  /**
-   * Checks if the first virtual URL segment is a language identifier and returns it if so.
-   *
-   * @return string|bool
-   */
-  private  function getLocaleFromURL ()
-  {
-    $lang = Request::segment (1);
-    return $lang && preg_match ('/^[a-z]{2}$/', $lang) ? $lang : false;
   }
 
 }

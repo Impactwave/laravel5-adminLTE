@@ -43,7 +43,7 @@
 @stop
 
 @section ('body')
-  <body class="skin-blue">
+  <body class="{{ $skin }}">
 
     <!-- Site wrapper -->
     <div class="wrapper">
@@ -58,31 +58,8 @@
             <span class="icon-bar"></span></a>
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="img/user.jpg" class="user-image" alt="User Image"/>
-                  <span class="hidden-xs">{{ $name  }}</span></a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="img/user.jpg" class="img-circle" alt="User Image"/>
-                    <p>
-                      {{ $name  }}
-                      <small>{{ $email  }}</small>
-                    </p>
-                  </li>
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="auth/logout" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
+              @include ('partial.lang')
+              @include ('partial.user-panel')
             </ul>
           </div>
         </nav>
@@ -94,28 +71,8 @@
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-          <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="img/user.jpg" class="img-circle" alt="User Image"/>
-            </div>
-            <div class="pull-left info">
-              <p>{{ $name  }}</p>
-
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-          <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </form>
-          <!-- /.search form -->
+          @include ('partial.user-sidebar')
+          @include ('partial.search')
           @include ('partial.menu')
         </section>
         <!-- /.sidebar -->
@@ -125,7 +82,6 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-
         <!-- Main content -->
         <section class="content">
 
@@ -141,8 +97,7 @@
           <b>Version</b> 3.0
         </div>
         <strong>Copyright &copy; 2015
-          <a href="http://impactwave.com">Impactwave, Lda</a>
-                .</strong> All rights reserved.
+          <a href="http://impactwave.com">Impactwave, Lda.</a></strong> All rights reserved.
       </footer>
     </div>
     <!-- ./wrapper -->

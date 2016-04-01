@@ -2,8 +2,8 @@
 
 @section ('content')
 
-  <h1 align=center>Welcome to the Application</h1>
+  <h1 align=center>{{ trans('admin.WELCOME_1') }}</h1>
   <br><br>
-  <p align=center>Use the menu on the left to navigate.</p>
+  <p align=center>{{ trans('admin.WELCOME_2') }}</p>
 
 @stop

@@ -4,14 +4,47 @@
 
   <div class="login-box">
     <div class="login-logo">
-      <a href="."><b>Laravel</b> 5</a>
+      <a href=".">{{ Config::get('app.name') }}</a>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
-      <p class="login-box-msg">{{ Lang::get('auth.LOGIN') }}</p>
+      <h4 class="login-box-msg">{{ Lang::get('auth.LOGIN') }}</h4>
+
       <form method="POST" action="auth/login">
-        @@token
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+        <div class="form-group">
+          <div class="btn-group btn-block">
+            <button type="button"
+                    class="btn btn-default dropdown-toggle btn-block"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    style="background: #FFF;border-color: #CCC;color: #666;">
+              {{ App\Http\Middleware\Language::getName() }} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" style="width:100%;margin-top:0">
+              @foreach (App\Http\Middleware\Language::getAll() as $locale=>$name)
+                <li>
+                  <a href="locale/{{ $locale }}">
+                    @if ($locale==$lang)
+                      <i class="glyphicon glyphicon-ok"></i>
+                    @else
+                      <i class="icon-placeholder"></i>
+                    @endif
+                    {{ $name }}
+                  </a>
+                </li>
+              @endforeach
+            </ul>
+          </div>
+        </div>
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" placeholder="{{ Lang::get('auth.EMAIL') }}" name="email" value="{{ old('email') }}" autofocus/>
+          <input type="text"
+                 class="form-control"
+                 placeholder="{{ Lang::get('auth.EMAIL') }}"
+                 name="email"
+                 value="{{ old('email') }}"
+                 autofocus/>
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">

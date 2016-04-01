@@ -1,6 +1,7 @@
 @extends('layout.clean')
 
 @section('content')
+  @@validationErrors
 
   <div class="register-box">
     <div class="register-box-body">
@@ -42,6 +43,7 @@
           </div><!-- /.col -->
         </div>
       </form>
+
       <div class="row">
         <div class="col-xs-8">
           <a style="float:left" href="auth/login" class="text-center">{{ Lang::get('auth.REGISTER 1') }}</a>

@@ -20,6 +20,10 @@ class ComposerServiceProvider extends ServiceProvider
 
     // Using Closure based composers...
 
+    View::composer ('*', function (ViewInstance $view) {
+      $view->with (['skin' => 'skin-blue']);
+    });
+
     View::composer ('layout.main', function (ViewInstance $view) {
       $user = Auth::user ();
 

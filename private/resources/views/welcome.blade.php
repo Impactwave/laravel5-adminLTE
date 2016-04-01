@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>{{ Config::get('app.name') }}</title>
     <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
     <style>
       body {
@@ -10,13 +11,13 @@
         color: #B0BEC5;
         display: table;
         font-weight: 100;
-        font-family: 'Lato';
+        font-family: 'Lato', sans-serif;
       }
 
       a {
         text-decoration: none;
         font-weight: bold;
-        color: #B0BEC5;
+        color: #FFF;
       }
 
       .container {
@@ -44,7 +45,7 @@
   <p style="position:absolute; left:47%; bottom:25%; padding:10px 30px; background-color:#3C8DBC"><a href="home">Log In</a></p>
   <div class="container">
       <div class="content">
-          <div class="title">Laravel 5</div>
+          <div class="title">{{ Config::get('app.name') }}</div>
       </div>
   </div>
   </body>

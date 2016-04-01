@@ -27,16 +27,50 @@ body, label, .checkbox label {
   top: -2px;
 }
 
+.icon-placeholder {
+  padding-left: 27px;
+}
+
+.sidebar-menu>li.header {
+  text-transform: uppercase;
+}
+
+/* Error list for form validation */
+.alert-validation {
+  font-weight: bold;
+}
+
+/*------------*/
 /* DataTables */
+/*------------*/
 
 .dataTable {
-  /*table-layout: fixed;*/
-  visibility: hidden;
+  table-layout: fixed;
+  display: none; /* shown when loaded */
 }
 
-.dataTable tbody .c {
-  cursor: pointer;
+/* Responsive layout support */
+
+.dataTable.collapsed {
+  table-layout: auto;
 }
+
+.dataTable .c {
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dataTable.collapsed .c {
+  white-space: normal;
+}
+
+.dataTables_wrapper {
+  overflow: hidden;
+}
+
+/* Customize table header icons */
 
 table.dataTable thead .sorting::after {
   font-family:'FontAwesome';
