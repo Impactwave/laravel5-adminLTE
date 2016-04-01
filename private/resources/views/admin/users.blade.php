@@ -2,66 +2,65 @@
 
 @section ('content')
 
-@section ('box-body')
-  <table id="table1" class="table table-bordered table-hover dataTable">
-    <colgroup>
-      <col width="40">
-      <col width="50%">
-      <col width="50%">
-      <col width="70">
-      <col width="90">
-      <col width="130">
-      <col width="130">
-    </colgroup>
-    <thead>
-    <tr>
-      <th>#</th>
-      <th>{{ trans('admin.EMAIL') }}</th>
-      <th>{{ trans('admin.NAME') }}</th>
-      <th>{{ trans('admin.ACTIVE') }}</th>
-      <th>{{ trans('admin.PENDING') }}</th>
-      <th>{{ trans('admin.CREATED') }}</th>
-      <th>{{ trans('admin.UPDATED') }}</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach ($users as $i => $user)
-      <tr data-id="{{ $user->id }}">
-        <td>
-          <div class=c>{{ $i + 1 }}</div>
-        </td>
-        <td>
-          <div class=c>{{ $user->email }}</div>
-        </td>
-        <td>
-          <div class=c>{{ $user->name }}</div>
-        </td>
-        <td>
-          <div class=c>{{ $user->active }}</div>
-        </td>
-        <td>
-          <div class=c>{{ $user->pending }}</div>
-        </td>
-        <td>
-          <div class=c>{{ $user->created_at }}</div>
-        </td>
-        <td>
-          <div class=c>{{ $user->updated_at }}</div>
-        </td>
+  @@c::panel (trans('admin.USERS')):
+    <table id="table1" class="table table-bordered table-hover dataTable">
+      <colgroup>
+        <col width="40">
+        <col width="50%">
+        <col width="50%">
+        <col width="70">
+        <col width="90">
+        <col width="130">
+        <col width="130">
+      </colgroup>
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>@lang('admin.EMAIL')</th>
+        <th>@lang('admin.NAME')</th>
+        <th>@lang('admin.ACTIVE')</th>
+        <th>@lang('admin.PENDING')</th>
+        <th>@lang('admin.CREATED')</th>
+        <th>@lang('admin.UPDATED')</th>
       </tr>
-    @endforeach
-    </tbody>
-  </table>
-@stop
+      </thead>
+      <tbody>
+      @foreach ($users as $i => $user)
+        <tr data-id="{{ $user->id }}">
+          <td>
+            <div class=c>{{ $i + 1 }}</div>
+          </td>
+          <td>
+            <div class=c>{{ $user->email }}</div>
+          </td>
+          <td>
+            <div class=c>{{ $user->name }}</div>
+          </td>
+          <td>
+            <div class=c>{{ $user->active }}</div>
+          </td>
+          <td>
+            <div class=c>{{ $user->pending }}</div>
+          </td>
+          <td>
+            <div class=c>{{ $user->created_at }}</div>
+          </td>
+          <td>
+            <div class=c>{{ $user->updated_at }}</div>
+          </td>
+        </tr>
+      @endforeach
+      </tbody>
+    </table>
 
-@section ('box-footer')
-  <div class="action-bar">
-    <a href="admin/user/" class="btn btn-success">
-      <i class="glyphicon glyphicon-plus-sign"></i>{{ trans('admin.BTN_NEW') }}</a>
-  </div>
-@stop
+    @@c::panelFooter:
+      <div class="action-bar">
+        <a href="admin/user/" class="btn btn-success">
+          <i class="glyphicon glyphicon-plus-sign"></i>@lang('admin.BTN_NEW')</a>
+      </div>
+    @@endc::panelFooter
 
-@include ('partial.box', ['title'=>trans('admin.USERS')])
+  @@endc::panel
 
 @stop
 

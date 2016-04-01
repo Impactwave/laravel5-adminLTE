@@ -13,10 +13,10 @@
     <!-- Menu Footer-->
     <li class="user-footer">
       <div class="pull-left">
-        <a href="admin/user/{{ Auth::id() }}" class="btn btn-default btn-flat">{{ trans('admin.PROFILE') }}</a>
+        <a href="admin/user/{{ Auth::id() }}" class="btn btn-default btn-flat">@lang('admin.PROFILE')</a>
       </div>
       <div class="pull-right">
-        <a href="auth/logout" class="btn btn-default btn-flat">{{ trans('admin.LOGOUT') }}</a>
+        <a href="auth/logout" class="btn btn-default btn-flat">@lang('admin.LOGOUT')</a>
       </div>
     </li>
   </ul>
