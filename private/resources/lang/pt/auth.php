@@ -40,18 +40,16 @@ return [
       'password'        => 'A senha foi alterada.',
       'user'            => 'Não existe nenhum utilizador com o endereço de e-mail indicado.',
       'token'           => 'O código recebido é inválido.',
-      'sent'            => 'Verifique a sua caixa de correio!|Enviámos um e-mail para si.',
-      'confirmed'       => 'Pode agora aceder à aplicação.|O seu e-mail foi confirmado.',
+      'sent'            => 'Verifique a sua caixa de correio!<br>Enviámos um e-mail para si.',
+      'confirmed'       => 'Pode agora aceder à aplicação.<br>O seu e-mail foi confirmado.',
       'reset-subject'   => 'Reposição da senha de acesso',
       'confirm-subject' => 'Confirmação do registo',
       'login-failed'    => 'E-mail ou senha inválidos.',
       'profile-updated' => 'O seu perfil foi atualizado.',
-      'pending-approval' => <<<HTML
-            O seu registo foi efectuado com sucesso!
-            No entanto, só poderá aceder à aplicação quando receber um email de ativação.
-
-HTML
-    ,  'pending-approval_confirmation' =>'Espera Aprovação',
-    'userinactive'        => 'Ainda não está ativo aguarde email de ativação',
+      'pending-approval' => '
+            <p>O seu registo foi efectuado com sucesso!
+            <p>No entanto, só poderá aceder à aplicação quando receber um email de ativação.',
+      'pending-approval_confirmation' =>'Espera Aprovação',
+      'userinactive'    => 'A sua conta ainda não está ativa. Por favor, aguarde o email de ativação.',
 
 ];

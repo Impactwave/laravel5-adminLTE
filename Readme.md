@@ -23,17 +23,17 @@ You can use it to bootstrap and accelerate your development process.
     * Custom styling
     * Page size selector
     * Search
-    * Paginator
+    * Paginator (with auto-hiding when unneeded)
     * Sort by colum
     * Localization support
-    * Blade directive for easy creation of data grids
+    * Blade directive for easy creation of fully configured data grids from simple tables
 
 * Fully functioning user authentication system, with:
 
     * Login / Logout
     * New user registration
     * Password reset via email
-    * Account activation by email
+    * Account activation by email, or manually by a moderator
 
 * Transactional email templates (compatible with most email and webmail clients)
 
@@ -41,9 +41,11 @@ You can use it to bootstrap and accelerate your development process.
 
     * Language selection (both on login and inside the application)
     * Fully translated app. interface
-    * Easy configuration of which languages are supported
-    * Extended API for locale support, with automated language activation middleware
-    * Two language selection modes: via session or via URL
+    * Extended localization API, with:
+	    * Automated language activation middleware
+	    * Two language selection modes: via session or via URL
+	    * Easy configuration of available languages
+	    * Automatic language detection
 
 * User management
 
@@ -55,8 +57,9 @@ You can use it to bootstrap and accelerate your development process.
 * Enhanced development features, such as:
 
     * Bower and Composer integration
-    * Improved compatibility with local development on Mac OSX, with support for `http://localhost/~user/site` URLs, configured via a specially crafted `.htaccess` file
-    * Tweaked folder organization better suited for deployment on Apache on Linux web servers
+    * Improved compatibility with local development on Mac OSX, with support for `http://localhost/~user/site` URLs
+    * Tweaked folder organization, better suited for deployment on Linux web servers with Apache
+    * IDE-Helper tool, which generates files to improve your IDE's code analysis and auto-completion
 
 #### AdminLTE integration
 
@@ -64,7 +67,7 @@ An integration of the popular open source AdminLTE Bootstrap-based application t
 
 * Blade templates, with hierarchical view composition (aka Master Pages)
 * View Composers
-* A small set of reusable and parametrized components
+* A small set of reusable and configurable components
 
 #### Razorblade integration
 
@@ -72,13 +75,15 @@ An integration with the [Razorblade](https://github.com/Impactwave/razorblade) e
 
 ##### Features
 
-* Write cleaner templates,
-* Reuse lightweight components,
-* Semi-automate form generation and validation,
-* Use new directives for implementing common UI patterns,
-* Easily write your own custom directives.
+With Razorblade, you can:
 
-> Please visit the project's website to learn about all the features it provides and how to use them.
+* Write cleaner templates
+* Reuse lightweight components
+* Semi-automate form generation and validation
+* Use new directives for implementing common UI patterns
+* Easily write your own custom directives
+
+> Please visit the [project's website]((https://github.com/Impactwave/razorblade)) to learn about all the features it provides and how to use them.
 
 ## Installation
 
@@ -115,7 +120,9 @@ to install [Bower](http://bower.io).
 * `bower install`
 * `composer install`
 
-Read the installation instructions at Laravel's website on the [Configuration](http://laravel.com/docs/5.0#configuration) chapter for more information about the next steps.
+To enhance your IDE's code analysis and auto-completion, run the provided IDE-Helper tool:
+
+	php artisan ide-helper:generate
 
 #### Environment configuration
 
@@ -123,13 +130,41 @@ Duplicate the file `.env.example` at `/private` and name it `.env`. Set the corr
 
 > These values can also be set via system environment variables (ex: via SetEnv on Apache configuration files).
 
+#### Database configuration
+
+You can configure the database driver on `private/config/database.php`.
+The database access credentials may be configured on the `.env` file, or trough environmental variables.
+
+The project comes pre-configured for a SQLite database, which requires no configuration.  
+To use t, you'll need to create a blank SQLite database.
+
+On the `private` directory, type:
+
+	touch storage/database.sqlite
+
+> **Note:** the SQLite database is excluded from the Git repo, so it will not be included on your commits.
+
+#### Database initialization
+
+To crete the database tables required by the application, just run the provided migrations.
+
+On the `private` directory, type:
+
+	php artisan migrate
+
+#### Additional configuration
+
+Altough, at this point, the application should be fully functional, you may need to perform additional configuration, if you have special requirements.
+
+In that case, read the installation instructions at Laravel's website on the [Configuration](http://laravel.com/docs/5.0#configuration) chapter for more information about the next steps.
+
 #### Test the installation
 
-Finally load the application on your web browser by specifying the base URL for it.
+Finally, load the application on your web browser by specifying the base URL for it.
 
 > ex: http://localhost/~your_username/laravel5-aminLTE, if you're developing on a Mac.
 
-You should see a very simple page with a big title on the center. That is a placeholder page that you can later replace by your application/website's home page.
+You should see a very simple page with a big title on the center. That is a placeholder page that you can later replace by your application/website's public home page.
 
 To enter the application, click the "Log In" button.
 

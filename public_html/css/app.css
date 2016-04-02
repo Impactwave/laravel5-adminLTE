@@ -49,6 +49,11 @@ body, label, .checkbox label {
   display: none; /* shown when loaded */
 }
 
+.dataTables_wrapper .pagination .disabled.next,
+.dataTables_wrapper .pagination .disabled.previous {
+   display: none;
+ }
+
 /* Responsive layout support */
 
 .dataTable.collapsed {

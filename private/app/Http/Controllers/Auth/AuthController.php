@@ -148,18 +148,6 @@ class AuthController extends Controller
       );
     }
 
-    /*
-    $validator = $this->registrar->validator([
-        'name'      => 'required',
-        'email'     => 'required|email|unique:users,email,null,null,active,1',
-        // email must not exist on users or active=0
-        'password'  => 'required|min:8',
-        'password2' => 'required|same:password',
-    ]);
-    if ($validator->fails()) {
-        $this->throwValidationException("", $validator);
-    }*/
-
     $name     = Input::get ('name');
     $email    = Input::get ('email');
     $password = Hash::make (Input::get ('password'));
@@ -177,7 +165,6 @@ class AuthController extends Controller
       'token' => Crypt::encrypt ($email),
     ];
 
-
     $id = DB::table ('users')->insertGetId ([
       'name'       => $name,
       'email'      => $email,
@@ -188,11 +175,10 @@ class AuthController extends Controller
 
     Auth::loginUsingId ($id);
 
-
     switch (\Config::get ('app.registerMode')) {
       case 'auto':
         Mail::send ('emails.confirm', $mailData, function ($message) use ($email) {
-          $message->to ($email)->subject (trans ('auth.confirm-subject')); // Confirmação do registo.
+          $message->to ($email)->subject (trans ('auth.confirm-subject')); // Registration confirmation.
         });
         return view ('auth.info', ['title' => trans ('auth.REGISTER'), 'text' => trans ('auth.sent')]);
         break;

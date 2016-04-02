@@ -39,18 +39,16 @@ return [
         'password'        => 'The password was changed.',
         'user'            => 'There is no user with the specified email address.',
         'token'           => 'The verification code is invalid.',
-        'sent'            => 'Please check your inbox!|We have sent you an email.',
-        'confirmed'       => 'You may now login to the app.|Your email was confirmed.',
+        'sent'            => 'Please check your inbox!<br>We have sent you an email.',
+        'confirmed'       => 'You may now login to the app.<br>Your email was confirmed.',
         'reset-subject'   => 'Password reset',
         'confirm-subject' => 'Registration confirmation',
         'login-failed'    => 'Invalid email or password.',
         'profile-updated' => 'Your profile was updated.',
-    'pending-approval' => <<<HTML
-            O seu registo foi efectuado com sucesso!
-            No entanto, só poderá aceder à aplicação quando receber um email de ativação.
-
-HTML
-        ,  'pending-approval_confirmation' =>'Espera Aprovação',
-    'userinactive'        => 'Ainda não está ativo aguarde email de ativação',
+    'pending-approval' => '
+            <p>Your registration has been succesfully performed!
+            <p>Nevertheless, you may only access the application after you receive an activation email.',
+        'pending-approval_confirmation' =>'Pending Approval',
+        'userinactive'        => 'Your account has net yet been activated. Please wait for the activation email.',
 
 ];
