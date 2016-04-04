@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\User;
+use Impactwave\Razorblade\Form;
+use Redirect;
 use View;
 
 class AdminController extends Controller
@@ -27,11 +29,14 @@ class AdminController extends Controller
   /**
    * The user detail form.
    *
+   * @param string|null $id
    * @return View
    */
   public function getUser ($id = null)
   {
-    return view ('admin.user', ['user' => User::findOrNew ($id)]);
+    $user = User::findOrNew ($id)->attributesToArray ();
+    Form::setModel ($user);
+    return view ('admin.user', ['user' => $user]);
   }
 
   /**
@@ -44,4 +49,21 @@ class AdminController extends Controller
     return view ('admin.users', ['users' => User::all ()]);
   }
 
+
+  public function postUser ($id = null)
+  {
+    $err = Form::validate ([
+      'name'       => 'required',
+      // if submitting a new user, the email must not exist on the users table or active can be 0
+      'email'      => 'required|email' . ($id ? '' : '|unique:users,email,null,null,active,1'),
+      'password'   => 'required|min:8',
+      'created_at' => 'required',
+      'updated_at' => 'required',
+    ]);
+
+    if ($err) return $err;
+
+    Form::flash ('Cool!');
+    return Redirect::to ('admin/users');
+  }
 }
