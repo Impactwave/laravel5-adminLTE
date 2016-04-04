@@ -13,7 +13,7 @@
   <!-- Toastr -->
   <script src="lib/toastr/toastr.min.js"></script>
   <!-- iCheck -->
-  <script src="lib/adminlte/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+  <script src="lib/adminlte/plugins/iCheck/square/icheck.min.js" type="text/javascript"></script>
   <script>
     $(function () {
       $('input').iCheck({

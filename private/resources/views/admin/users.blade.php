@@ -4,9 +4,7 @@
 
   @@c::panel (trans('admin.USERS')):
 
-  @@c::dataTable ('admin/user/'):
-
-  <table id="table1" class="table table-bordered table-hover dataTable">
+  <table id="table1" data-detail-url="admin/user/" class="table table-bordered table-hover dataTable">
     <colgroup>
       <col width="40">
       <col width="50%">
@@ -48,8 +46,6 @@
     @endforeach
     </tbody>
   </table>
-
-  @@endc::dataTable
 
   @@c::panelFooter:
   <div class="action-bar">

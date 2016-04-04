@@ -40,6 +40,8 @@
       });
     });
   </script>
+
+  <script src='js/app.js'></script>
 @stop
 
 @section ('body')
