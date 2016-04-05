@@ -1,5 +1,12 @@
 var lang = document.documentElement.getAttribute ('lang');
 
+// Auto-select the auto-focused input (if any)
+setTimeout (function () {
+  var e = document.activeElement;
+  if (e && e.tagName == 'INPUT')
+    e.select ();
+});
+
 /*
  * DataTables.net integration
  */

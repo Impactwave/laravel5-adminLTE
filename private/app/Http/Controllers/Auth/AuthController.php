@@ -123,7 +123,7 @@ class AuthController extends Controller
       }
     }
 
-    Form::flash ('Os dados de login são inválidos', 'Atenção!');
+    Form::flash (trans('admin.LOGIN_FAILED'),'', Form::ALERT_ERROR);
 
     return redirect ($this->loginPath ())
       ->withInput ($request->only ('email', 'remember'))

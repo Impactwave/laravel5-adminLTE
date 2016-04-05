@@ -21,7 +21,7 @@
     @@endfield
 
     @@field('email',trans('admin.EMAIL')):
-      <input type="email">
+      <input type="text">
     @@endfield
 
     @@field('password',trans('admin.PASSWORD')):
@@ -40,7 +40,7 @@
       <div class="col-sm-2">
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="active" value="1" checked="@boolAttr (Impactwave\Razorblade\Form::fieldWas('pending',true))">
+            <input type="checkbox" name="pending" value="1" checked="@boolAttr (Impactwave\Razorblade\Form::fieldWas('pending',true))">
             @lang('admin.PENDING')
           </label>
         </div>

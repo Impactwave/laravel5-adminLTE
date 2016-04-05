@@ -34,6 +34,8 @@ return [
   'PASSWORD'        => 'Password',
   'PROFILE'         => 'Profile',
   'LOGOUT'          => 'Sign out',
+  'USER_SAVED'      => 'The user was saved.',
+  'LOGIN_FAILED'    => 'The given credentials do not match our records|Warning!',
 
   // Demo Content
 

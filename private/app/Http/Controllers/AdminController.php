@@ -1,7 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\User;
+use Carbon\Carbon;
 use Impactwave\Razorblade\Form;
+use Input;
 use Redirect;
 use View;
 
@@ -17,6 +19,8 @@ class AdminController extends Controller
   | controller as you wish. It is just here to get your app started!
   |
   */
+
+  const DUMMY_PASS = 'dummypassword';
 
   /**
    * Create a new controller instance.
@@ -35,6 +39,11 @@ class AdminController extends Controller
   public function getUser ($id = null)
   {
     $user = User::findOrNew ($id)->attributesToArray ();
+    if ($id) $user['password'] = self::DUMMY_PASS;
+    else {
+      $user['created_at'] = Carbon::now();
+      $user['updated_at'] = Carbon::now();
+    }
     Form::setModel ($user);
     return view ('admin.user', ['user' => $user]);
   }
@@ -63,7 +72,14 @@ class AdminController extends Controller
 
     if ($err) return $err;
 
-    Form::flash ('Cool!');
+    $user = User::findOrNew ($id);
+    $form = Input::all ();
+    if ($form['password'] == self::DUMMY_PASS)
+      unset ($form['password']);
+    $user->fill($form);
+    $user->save ($form);
+
+    Form::flash (trans('admin.USER_SAVED'));
     return Redirect::to ('admin/users');
   }
 }

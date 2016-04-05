@@ -34,6 +34,8 @@ return [
   'PASSWORD'        => 'Senha',
   'PROFILE'         => 'Perfil',
   'LOGOUT'          => 'Terminar sessão',
+  'USER_SAVED'      => 'O utilizador foi gravado.',
+  'LOGIN_FAILED'    => 'Os dados de login são inválidos|Atenção!',
 
   // Demo Content
 
