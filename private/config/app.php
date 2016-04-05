@@ -152,12 +152,13 @@ return [
     'Illuminate\Translation\TranslationServiceProvider',
     'Illuminate\Validation\ValidationServiceProvider',
     'Illuminate\View\ViewServiceProvider',
+    'Illuminate\Broadcasting\BroadcastServiceProvider',
 
     /*
      * Application Service Providers...
      */
     'App\Providers\AppServiceProvider',
-    'App\Providers\BusServiceProvider',
+    'App\Providers\AutgServiceProvider',
     'App\Providers\ConfigServiceProvider',
     'App\Providers\EventServiceProvider',
     'App\Providers\RouteServiceProvider',

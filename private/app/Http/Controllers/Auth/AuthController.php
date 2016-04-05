@@ -1,25 +1,23 @@
 <?php namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Auth;
 use Crypt;
 use DB;
 use Exception;
 use Hash;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Http\Request;
 use Impactwave\Razorblade\Form;
 use Input;
-use Lang;
 use Mail;
 use Redirect;
 use Util;
+use Validator;
 
 class AuthController extends Controller
 {
-
   /*
   |--------------------------------------------------------------------------
   | Registration & Login Controller
@@ -33,28 +31,30 @@ class AuthController extends Controller
 
   use AuthenticatesAndRegistersUsers;
 
-
   const HOME_ACTION = 'HomeController@index';
 
   /**
    * Create a new authentication controller instance.
-   *
-   * @param  \Illuminate\Contracts\Auth\Guard     $auth
-   * @param  \Illuminate\Contracts\Auth\Registrar $registrar
-   * @return void
    */
-  public function __construct (Guard $auth, Registrar $registrar)
+  public function __construct ()
   {
-    $this->auth      = $auth;
-    $this->registrar = $registrar;
-
     $this->middleware ('guest', ['except' => 'getLogout']);
   }
 
-
-  //============================================================
-  // LOGIN
-  //============================================================
+  /**
+   * Create a new user instance after a valid registration.
+   *
+   * @param  array $data
+   * @return User
+   */
+  public function create (array $data)
+  {
+    return User::create ([
+      'name'     => $data['name'],
+      'email'    => $data['email'],
+      'password' => bcrypt ($data['password']),
+    ]);
+  }
 
   public function getConfirmEmail ($token)
   {
@@ -86,16 +86,20 @@ class AuthController extends Controller
     return Redirect::action (self::HOME_ACTION);
   }
 
-
-
   //============================================================
-  // REGISTRATION
+  // LOGIN
   //============================================================
 
   public function getRegister ()
   {
     return view ('auth.register');
   }
+
+
+
+  //============================================================
+  // REGISTRATION
+  //============================================================
 
   /**
    * Handle a login request to the application.
@@ -123,7 +127,7 @@ class AuthController extends Controller
       }
     }
 
-    Form::flash (trans('admin.LOGIN_FAILED'),'', Form::ALERT_ERROR);
+    Form::flash (trans ('admin.LOGIN_FAILED'), '', Form::ALERT_ERROR);
 
     return redirect ($this->loginPath ())
       ->withInput ($request->only ('email', 'remember'))
@@ -191,6 +195,21 @@ class AuthController extends Controller
     }
 
 
+  }
+
+  /**
+   * Get a validator for an incoming registration request.
+   *
+   * @param  array $data
+   * @return \Illuminate\Contracts\Validation\Validator
+   */
+  public function validator (array $data)
+  {
+    return Validator::make ($data, [
+      'name'     => 'required|max:255',
+      'email'    => 'required|email|max:255|unique:users',
+      'password' => 'required|confirmed|min:6',
+    ]);
   }
 
 }
