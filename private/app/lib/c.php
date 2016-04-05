@@ -5,10 +5,11 @@ class c
   static public function panel ($indentSpace, $html, $title = null, $options = [])
   {
     $footer = array_Get (View::getSections (), 'panel-footer');
-    $close = array_get ($options, 'close',false);
-    $collapse = array_get ($options, 'collapse',false);
+    $close = array_get ($options, 'close', false);
+    $collapse = array_get ($options, 'collapse', false);
+    $class = array_get ($options, 'class', '');
     ?>
-    <div class="box">
+    <div class="box <?=$class ?>">
       <?php if (isset($title)): ?>
         <div class="box-header with-border">
           <h3 class="box-title"><?= $title ?></h3>

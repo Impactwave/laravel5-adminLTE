@@ -2,7 +2,7 @@
 
 @section ('content')
 
-  @@c::panel (trans('admin.USERS')):
+  @@c::panel (trans('admin.USERS'),['class'=>'gridPanel box-primary']):
 
   <table id="table1" data-detail-url="{{ URL::route('user') }}/" class="table table-bordered table-hover dataTable">
     <colgroup>

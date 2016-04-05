@@ -2,11 +2,10 @@
 
 @section ('content')
 
-  @@c::panel (trans('admin.USER')):
+  @@c::panel (trans('admin.USER'),['class'=>'formPanel box-primary']):
 
   <form id="mainForm" class="form-horizontal" role="form" method="POST">
     @@token
-        @@fieldDefaultOptions(['lblClass'=>'col-sm-2 control-label','innerClass'=>'col-sm-9'])
 
         <!-- disable browser's autofill and password-saving prompt -->
     <input type="text"

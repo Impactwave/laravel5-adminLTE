@@ -1,12 +1,13 @@
-body, label, .checkbox label {
-  font-weight: 300;
+.gridPanel {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.checkbox label {
-  padding-left: 0 !important;
-}
-.icheckbox_square-blue {
-  margin-right: 5px;
+.formPanel {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .action-bar .btn {
@@ -19,6 +20,23 @@ body, label, .checkbox label {
   content: '';
   display: block;
   clear: both;
+}
+
+body, label, .checkbox label {
+  font-weight: 300;
+}
+
+.checkbox label {
+  padding-left: 0 !important;
+}
+
+.icheckbox_square-blue {
+  margin-right: 5px;
+}
+
+.icheckbox_square-blue.focus {
+  outline: 1px dotted #3C8DBC;
+  outline-offset: 2px;
 }
 
 .btn i {
