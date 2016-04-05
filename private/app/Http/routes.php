@@ -11,18 +11,23 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get ('/', 'WelcomeController@index');
 
-Route::get('home', 'HomeController@index');
+Route::get ('home', ['as' => 'home', 'tag' => 'home', 'uses' => 'HomeController@index']);
 
-Route::controllers([
-  'auth' => 'Auth\AuthController',
+Route::controllers ([
+  'auth'     => 'Auth\AuthController',
   'password' => 'Auth\PasswordController',
-  'admin' => 'AdminController'
 ]);
 
+Route::group (['tag' => 'users'], function () {
+  Route::controller ('admin', 'AdminController', [
+    'getUsers' => 'users',
+    'getUser'  => 'user',
+  ]);
+});
 
-// Localization support:
+// URL-controlled localization support:
 
 //Route::group (Language::getRouteGroup (), function () {
 //});

@@ -4,7 +4,7 @@
 
   @@c::panel (trans('admin.USERS')):
 
-  <table id="table1" data-detail-url="admin/user/" class="table table-bordered table-hover dataTable">
+  <table id="table1" data-detail-url="{{ URL::route('user') }}/" class="table table-bordered table-hover dataTable">
     <colgroup>
       <col width="40">
       <col width="50%">
@@ -49,7 +49,7 @@
 
   @@c::panelFooter:
   <div class="action-bar">
-    <a href="admin/user/" class="btn btn-success">
+    <a href="{{ URL::route('user') }}/" class="btn btn-success">
       <i class="glyphicon glyphicon-plus-sign"></i>@lang('admin.BTN_NEW')</a>
   </div>
   @@endc::panelFooter

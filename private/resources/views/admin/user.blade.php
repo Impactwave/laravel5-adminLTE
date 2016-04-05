@@ -59,7 +59,7 @@
     <div class="action-bar">
       <button type="submit" class="btn btn-primary" form="mainForm">
         <i class="glyphicon glyphicon-ok"></i>@lang('admin.BTN_SAVE')</button>
-      <a href="admin/users" class="btn btn-default">
+      <a href="{{ URL::route('users') }}" class="btn btn-default">
         <i class="glyphicon glyphicon-ban-circle"></i>@lang('admin.BTN_CANCEL')</a>
     </div>
     @@endc::panelFooter
