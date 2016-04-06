@@ -45,7 +45,7 @@ class AdminController extends Controller
       $user['updated_at'] = Carbon::now();
     }
     Form::setModel ($user);
-    return view ('admin.user', ['user' => $user]);
+    return view ('admin.user');
   }
 
   /**
@@ -70,6 +70,17 @@ class AdminController extends Controller
       'updated_at' => 'required',
     ]);
 
+
+
+    $this->var = [
+      'name'       => 'required',
+      // if submitting a new user, the email must not exist on the users table or active can be 0
+      'email'      => 'required|email' . ($id ? '' : '|unique:users,email,null,null,active,1'),
+      'password'   => 'required|min:8',
+      'created_at' => 'required',
+      'updated_at' => 'required',
+    ];
+
     if ($err) return $err;
 
     $user = User::findOrNew ($id);
@@ -80,6 +91,6 @@ class AdminController extends Controller
     $user->save ($form);
 
     Form::flash (trans('admin.USER_SAVED'));
-    return Redirect::to ('admin/users');
+    return Redirect::route ('users');
   }
 }

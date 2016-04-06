@@ -67,7 +67,7 @@ class AuthController extends Controller
         switch (\Config::get ('app.registerMode')) {
           case 'auto':
             $userQuery->update (['active' => 1]);
-            Util::flash (trans ('auth.confirmed'), '', Util::ALERT_SUCCESS); // Foi enviado um email.
+            Form::flash (trans ('auth.confirmed'), '', Form::ALERT_SUCCESS); // Foi enviado um email.
             return view ('auth/login');
             break;
           case 'confirm':
@@ -78,10 +78,10 @@ class AuthController extends Controller
         }
 
       }
-      else Util::flash (trans ('auth.user'), '', Util::ALERT_ERROR); // Não existe o email.
+      else Form::flash (trans ('auth.user'), '', Form::ALERT_ERROR); // Não existe o email.
     }
     catch (Exception $e) {
-      Util::flash (trans ('auth.token'), '', Util::ALERT_ERROR); // Token inválido.
+      Form::flash (trans ('auth.token'), '', Form::ALERT_ERROR); // Token inválido.
     }
     return Redirect::action (self::HOME_ACTION);
   }
