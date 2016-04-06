@@ -25,7 +25,7 @@ $ ('.dataTable').each (function () {
     lengthMenu:   [5, 10, 15, 20, 50, 100],
     pagingType:   'simple_numbers',
     serverSide:   false,
-    language:     lang != 'en' ? { url: 'js/datatables/$lang-" . strtoupper (' + lang + ') . ".json' } : null,
+    language:     lang != 'en' ? { url: 'js/datatables/' + lang + '-' + lang.toUpperCase() + '.json' } : null,
     initComplete: function () {
       table.show ();
     },
