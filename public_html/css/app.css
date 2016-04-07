@@ -5,7 +5,7 @@
 }
 
 .formPanel {
-  max-width: 800px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -53,6 +53,10 @@ body, label, .checkbox label {
   text-transform: uppercase;
 }
 
+.sidebar-menu > li.active > a {
+  font-weight: 400;
+}
+
 /* Error list for form validation */
 .alert-validation {
   font-weight: bold;
@@ -69,6 +73,10 @@ body, label, .checkbox label {
   width: 100% !important;
 }
 
+#toast-container li {
+  list-style: none;
+}
+
 /*------------*/
 /* DataTables */
 /*------------*/
@@ -80,8 +88,8 @@ body, label, .checkbox label {
 
 .dataTables_wrapper .pagination .disabled.next,
 .dataTables_wrapper .pagination .disabled.previous {
-   display: none;
- }
+  display: none;
+}
 
 /* Responsive layout support */
 
@@ -152,4 +160,3 @@ table.dataTable thead .sorting_desc_disabled::after {
   content: '\f0dd';
   opacity: 0.2;
 }
-

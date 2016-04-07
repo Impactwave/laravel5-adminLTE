@@ -36,6 +36,6 @@ $ ('.dataTable').each (function () {
   });
   if (href)
     table.on ('click', 'div', function (ev) {
-      location.href = 'admin/user/' + ev.target.parentElement.parentElement.getAttribute ('data-id');
+      location.href = href + ev.target.parentElement.parentElement.getAttribute ('data-id');
     });
 });
